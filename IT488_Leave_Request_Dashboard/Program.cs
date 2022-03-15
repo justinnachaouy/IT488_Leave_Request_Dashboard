@@ -16,7 +16,7 @@ namespace IT488_Leave_Request_Dashboard
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new login_form());
         }
     }
 }
