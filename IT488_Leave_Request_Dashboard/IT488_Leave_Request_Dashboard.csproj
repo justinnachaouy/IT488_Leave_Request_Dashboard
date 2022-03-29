@@ -46,6 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller.cs" />
+    <Compile Include="leave_request_dashboardDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>leave_request_dashboardDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="leave_request_dashboardDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>leave_request_dashboardDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="requests_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="requests_form.Designer.cs">
+      <DependentUpon>requests_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="login_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +71,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="requests_form.resx">
+      <DependentUpon>requests_form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login_form.resx">
       <DependentUpon>login_form.cs</DependentUpon>
     </EmbeddedResource>
@@ -62,6 +82,28 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="leave_request_dashboardDataSet.xsc">
+      <DependentUpon>leave_request_dashboardDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="leave_request_dashboardDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>leave_request_dashboardDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="leave_request_dashboardDataSet.xss">
+      <DependentUpon>leave_request_dashboardDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="leave_request_dashboardDataSet1.xsc">
+      <DependentUpon>leave_request_dashboardDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="leave_request_dashboardDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>leave_request_dashboardDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="leave_request_dashboardDataSet1.xss">
+      <DependentUpon>leave_request_dashboardDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
