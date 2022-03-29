@@ -27,8 +27,6 @@ namespace IT488_Leave_Request_Dashboard
         {
             // TODO: This line of code loads data into the 'leave_request_dashboardDataSet1.temprequests' table. You can move, or remove it, as needed.
             this.temprequestsTableAdapter1.Fill(this.leave_request_dashboardDataSet1.temprequests);
-            // TODO: This line of code loads data into the 'leave_request_dashboardDataSet.temprequests' table. You can move, or remove it, as needed.
-            this.temprequestsTableAdapter.Fill(this.leave_request_dashboardDataSet.temprequests);
             if (Globals.VarUsername.Length == 0 || Globals.VarPassword.Length == 0 ||
                 Globals.VarServer.Length == 0 || Globals.VarDatabase.Length == 0)
             {
