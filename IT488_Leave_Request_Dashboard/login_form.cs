@@ -25,7 +25,7 @@ namespace IT488_Leave_Request_Dashboard
         {
             Globals.VarUsername = UsernameText.Text;
             Globals.VarPassword = PasswordText.Text;
-            Globals.VarServer = @"127.0.0.1";
+            Globals.VarServer = @"50.90.25.31";
             Globals.VarDatabase = "leave_request_dashboard";
 
             try
