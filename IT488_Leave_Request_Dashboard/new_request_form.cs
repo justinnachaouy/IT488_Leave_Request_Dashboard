@@ -72,5 +72,10 @@ namespace IT488_Leave_Request_Dashboard
             dataGridView1.DataSource = dt;
 
         }
+
+        private class dataGridView1
+        {
+            public static DataTable DataSource { get; internal set; }
+        }
     }
 }
