@@ -70,12 +70,19 @@ namespace IT488_Leave_Request_Dashboard
 
             // Change the datasource on our dataGridDatabaseViewer to our DataTable and then display on screen
             dataGridView1.DataSource = dt;
+            new_requests_form frm = new request_off();
+            frm.ShowDialog();
 
         }
 
         private class dataGridView1
         {
             public static DataTable DataSource { get; internal set; }
+        }
+
+        public static implicit operator new_requests_form(request_off v)
+        {
+            throw new NotImplementedException();
         }
     }
 }
