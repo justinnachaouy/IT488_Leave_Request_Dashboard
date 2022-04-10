@@ -130,6 +130,9 @@
   <data name="1-web" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1-web1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pug-logo-stacked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pug-logo-stacked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="7-web" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\7-web1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,7 +145,7 @@
   <data name="6-web" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\6-web1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pug-logo-stacked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pug-logo-stacked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dashboard1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dashboard1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
