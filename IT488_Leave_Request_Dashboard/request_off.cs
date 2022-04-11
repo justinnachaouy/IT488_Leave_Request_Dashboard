@@ -12,14 +12,29 @@ namespace IT488_Leave_Request_Dashboard
 {
     public partial class request_off : Form
     {
+        private Controller controller;
+        private object menuStrip2;
+        private object leave_request_dashboardDataSet1;
+        private object temprequestsTableAdapter1;
+
         public request_off()
         {
             InitializeComponent();
-        }
+        
+    }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (comboBox1.Text == "No")
+            {
+                dateTimePicker1.Visible = false;
+                label4.Visible = false;
+            }
+            else
+            {
+                dateTimePicker1.Visible = true;
+                label4.Visible = true;
+            }
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -43,5 +58,25 @@ namespace IT488_Leave_Request_Dashboard
         {
 
         }
+
+        private void request_off_Load(object sender, EventArgs e)
+        {
+            if (Globals.VarUsername.Length == 0 || Globals.VarPassword.Length == 0 ||
+                Globals.VarServer.Length == 0 || Globals.VarDatabase.Length == 0)
+            {
+
+            }
+            else
+            {
+                controller = new Controller("Data Source = tcp:" + Globals.VarServer + ";" +
+                "Initial Catalog = " + Globals.VarDatabase + ";" +
+                "User ID = " + Globals.VarUsername + ";" +
+                "Password = " + Globals.VarPassword + ";"
+                );
+            }
+
+        }
     }
-}
+    }
+    
+
