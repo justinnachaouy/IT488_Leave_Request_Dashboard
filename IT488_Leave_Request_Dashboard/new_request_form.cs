@@ -96,5 +96,16 @@ namespace IT488_Leave_Request_Dashboard
             Application.Exit();
         }
 
+        private void submit_butt_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Request Submitted Succesfully!");
+            cancel_butt.Visible = true;
+        }
+
+        private void cancel_butt_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Request Canceled");
+            submit_butt.Visible = true;
+        }
     }
 }

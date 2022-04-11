@@ -49,13 +49,20 @@ namespace IT488_Leave_Request_Dashboard
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.EndDate_label = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.AllDayLeave_combo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.submit_butt = new System.Windows.Forms.Button();
+            this.cancel_butt = new System.Windows.Forms.Button();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.temprequestsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.leave_request_dashboardDataSet1)).BeginInit();
@@ -64,6 +71,7 @@ namespace IT488_Leave_Request_Dashboard
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip2
@@ -180,11 +188,11 @@ namespace IT488_Leave_Request_Dashboard
             // 
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(209, 436);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(197, 427);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1213, 329);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(1074, 225);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Comments/Notes:";
@@ -194,23 +202,25 @@ namespace IT488_Leave_Request_Dashboard
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(4, 20);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1205, 305);
+            this.textBox1.Size = new System.Drawing.Size(1066, 201);
             this.textBox1.TabIndex = 0;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(12, 53);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(265, 23);
             this.dateTimePicker1.TabIndex = 5;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.EndDate_label);
@@ -218,70 +228,32 @@ namespace IT488_Leave_Request_Dashboard
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(209, 284);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(197, 261);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(1213, 144);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Request Date/Time";
             // 
-            // EndDate_label
+            // label4
             // 
-            this.EndDate_label.AutoSize = true;
-            this.EndDate_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EndDate_label.Location = new System.Drawing.Point(352, 33);
-            this.EndDate_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.EndDate_label.Name = "EndDate_label";
-            this.EndDate_label.Size = new System.Drawing.Size(80, 17);
-            this.EndDate_label.TabIndex = 8;
-            this.EndDate_label.Text = "End Date:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(412, 97);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(27, 17);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "To";
             // 
-            // dateTimePicker2
+            // label2
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(348, 53);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(265, 23);
-            this.dateTimePicker2.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 17);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Start Date:";
-            // 
-            // AllDayLeave_combo
-            // 
-            this.AllDayLeave_combo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.AllDayLeave_combo.FormattingEnabled = true;
-            this.AllDayLeave_combo.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
-            this.AllDayLeave_combo.Location = new System.Drawing.Point(357, 90);
-            this.AllDayLeave_combo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.AllDayLeave_combo.Name = "AllDayLeave_combo";
-            this.AllDayLeave_combo.Size = new System.Drawing.Size(220, 24);
-            this.AllDayLeave_combo.TabIndex = 7;
-            this.AllDayLeave_combo.Text = "Yes";
-            this.AllDayLeave_combo.TextChanged += new System.EventHandler(this.AllDayLeave_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(244, 94);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 16);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "All Day Leave?";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 105);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 17);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Time:";
             // 
             // comboBox1
             // 
@@ -315,8 +287,8 @@ namespace IT488_Leave_Request_Dashboard
             "12:15 PM",
             "12:30 AM",
             "12:45 AM"});
-            this.comboBox1.Location = new System.Drawing.Point(12, 98);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Location = new System.Drawing.Point(82, 97);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 25);
             this.comboBox1.TabIndex = 10;
@@ -324,25 +296,171 @@ namespace IT488_Leave_Request_Dashboard
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(348, 97);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox2.Items.AddRange(new object[] {
+            "07:00 PM",
+            "07:15 PM",
+            "07:30 PM",
+            "07:45 PM",
+            "08:00 PM",
+            "08:15 PM",
+            "08:30 PM",
+            "08:45 PM",
+            "09:00 PM",
+            "09:15 PM",
+            "09:30 PM",
+            "09:45 PM",
+            "10:00 PM",
+            "10:15 PM",
+            "10:30 PM",
+            "10:45 PM",
+            "11:00 PM",
+            "11:15 PM",
+            "11:30 PM",
+            "11:45 PM",
+            "12:00 PM",
+            "12:15 PM",
+            "12:30 PM",
+            "12:45 PM",
+            "12:00 PM",
+            "12:15 PM",
+            "12:30 PM",
+            "12:45 PM"});
+            this.comboBox2.Location = new System.Drawing.Point(616, 97);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(160, 25);
             this.comboBox2.TabIndex = 11;
+            // 
+            // EndDate_label
+            // 
+            this.EndDate_label.AutoSize = true;
+            this.EndDate_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EndDate_label.Location = new System.Drawing.Point(613, 32);
+            this.EndDate_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.EndDate_label.Name = "EndDate_label";
+            this.EndDate_label.Size = new System.Drawing.Size(80, 17);
+            this.EndDate_label.TabIndex = 8;
+            this.EndDate_label.Text = "End Date:";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Location = new System.Drawing.Point(616, 53);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(265, 23);
+            this.dateTimePicker2.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Start Date:";
+            // 
+            // AllDayLeave_combo
+            // 
+            this.AllDayLeave_combo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.AllDayLeave_combo.FormattingEnabled = true;
+            this.AllDayLeave_combo.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.AllDayLeave_combo.Location = new System.Drawing.Point(45, 72);
+            this.AllDayLeave_combo.Margin = new System.Windows.Forms.Padding(4);
+            this.AllDayLeave_combo.Name = "AllDayLeave_combo";
+            this.AllDayLeave_combo.Size = new System.Drawing.Size(220, 24);
+            this.AllDayLeave_combo.TabIndex = 7;
+            this.AllDayLeave_combo.Text = "Yes";
+            this.AllDayLeave_combo.TextChanged += new System.EventHandler(this.AllDayLeave_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(42, 38);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 16);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "All Day Leave";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(538, 38);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 16);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Request Type";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Leave of Abscence",
+            "Paid Time Off",
+            "Maternity ",
+            "Personal",
+            "Sick",
+            "Family"});
+            this.comboBox3.Location = new System.Drawing.Point(541, 72);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(210, 24);
+            this.comboBox3.TabIndex = 10;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.comboBox3);
+            this.groupBox3.Controls.Add(this.AllDayLeave_combo);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(197, 97);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1046, 143);
+            this.groupBox3.TabIndex = 11;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Request Info";
+            // 
+            // submit_butt
+            // 
+            this.submit_butt.Location = new System.Drawing.Point(490, 693);
+            this.submit_butt.Name = "submit_butt";
+            this.submit_butt.Size = new System.Drawing.Size(116, 27);
+            this.submit_butt.TabIndex = 12;
+            this.submit_butt.Text = "Submit";
+            this.submit_butt.UseVisualStyleBackColor = true;
+            this.submit_butt.Click += new System.EventHandler(this.submit_butt_Click);
+            // 
+            // cancel_butt
+            // 
+            this.cancel_butt.Location = new System.Drawing.Point(765, 693);
+            this.cancel_butt.Name = "cancel_butt";
+            this.cancel_butt.Size = new System.Drawing.Size(112, 26);
+            this.cancel_butt.TabIndex = 13;
+            this.cancel_butt.Text = "Cancel";
+            this.cancel_butt.UseVisualStyleBackColor = true;
+            this.cancel_butt.Click += new System.EventHandler(this.cancel_butt_Click);
             // 
             // new_request_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1427, 764);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.AllDayLeave_combo);
+            this.Controls.Add(this.cancel_butt);
+            this.Controls.Add(this.submit_butt);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "new_request_form";
             this.Text = "Leave Request Dashboard";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.requests_form_Closed);
@@ -358,6 +476,8 @@ namespace IT488_Leave_Request_Dashboard
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,5 +510,12 @@ namespace IT488_Leave_Request_Dashboard
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button submit_butt;
+        private System.Windows.Forms.Button cancel_butt;
     }
 }
