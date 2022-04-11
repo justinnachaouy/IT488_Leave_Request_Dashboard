@@ -15,13 +15,21 @@ namespace IT488_Leave_Request_Dashboard
 {
     public partial class requests_form : Form
     {
-
         private Controller controller;
+
+        request_off new_request_form;
 
         public requests_form()
         {
             InitializeComponent();
         }
+
+        void new_request_form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            new_request_form = null;  //If form is closed make sure reference is set to null
+            Show();
+        }
+
 
         private void requests_form_Load(object sender, EventArgs e)
         {
@@ -71,6 +79,18 @@ namespace IT488_Leave_Request_Dashboard
             // Change the datasource on our dataGridDatabaseViewer to our DataTable and then display on screen
             dataGridView1.DataSource = dt;
 
+        }
+
+        private void newRequestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (new_request_form == null)
+            {
+                new_request_form = new request_off();   //Create form if not created
+                new_request_form.FormClosed += new_request_form_FormClosed;  //Add eventhandler to cleanup after form closes
+            }
+
+            new_request_form.Show(this);  //Show Form assigning this form as the forms owner
+            Hide();
         }
     }
 }

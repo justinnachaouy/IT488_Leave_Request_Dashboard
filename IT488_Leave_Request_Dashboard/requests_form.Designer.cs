@@ -78,10 +78,10 @@ namespace IT488_Leave_Request_Dashboard
             this.aboutToolStripMenuItem,
             this.logOutToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 52);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 42);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 6, 0, 6);
-            this.menuStrip1.Size = new System.Drawing.Size(181, 712);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 5, 0, 5);
+            this.menuStrip1.Size = new System.Drawing.Size(154, 579);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -89,35 +89,35 @@ namespace IT488_Leave_Request_Dashboard
             // 
             this.myLeaveRequestsToolStripMenuItem.Name = "myLeaveRequestsToolStripMenuItem";
             this.myLeaveRequestsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.myLeaveRequestsToolStripMenuItem.Size = new System.Drawing.Size(164, 37);
+            this.myLeaveRequestsToolStripMenuItem.Size = new System.Drawing.Size(141, 33);
             this.myLeaveRequestsToolStripMenuItem.Text = "My Leave Requests";
             // 
             // myLeaveBalancesToolStripMenuItem
             // 
             this.myLeaveBalancesToolStripMenuItem.Name = "myLeaveBalancesToolStripMenuItem";
             this.myLeaveBalancesToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.myLeaveBalancesToolStripMenuItem.Size = new System.Drawing.Size(164, 37);
+            this.myLeaveBalancesToolStripMenuItem.Size = new System.Drawing.Size(141, 33);
             this.myLeaveBalancesToolStripMenuItem.Text = "My Leave Balances";
             // 
             // companyHolidaysToolStripMenuItem
             // 
             this.companyHolidaysToolStripMenuItem.Name = "companyHolidaysToolStripMenuItem";
             this.companyHolidaysToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.companyHolidaysToolStripMenuItem.Size = new System.Drawing.Size(164, 37);
+            this.companyHolidaysToolStripMenuItem.Size = new System.Drawing.Size(141, 33);
             this.companyHolidaysToolStripMenuItem.Text = "Company Holidays";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(164, 37);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(141, 33);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
             this.logOutToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(164, 37);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(141, 33);
             this.logOutToolStripMenuItem.Text = "Log out";
             // 
             // menuStrip2
@@ -131,7 +131,8 @@ namespace IT488_Leave_Request_Dashboard
             this.filterRequestsToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1427, 52);
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip2.Size = new System.Drawing.Size(1070, 42);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -141,8 +142,9 @@ namespace IT488_Leave_Request_Dashboard
             this.newRequestToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.newRequestToolStripMenuItem.Name = "newRequestToolStripMenuItem";
             this.newRequestToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5);
-            this.newRequestToolStripMenuItem.Size = new System.Drawing.Size(110, 48);
+            this.newRequestToolStripMenuItem.Size = new System.Drawing.Size(90, 38);
             this.newRequestToolStripMenuItem.Text = "New Request";
+            this.newRequestToolStripMenuItem.Click += new System.EventHandler(this.newRequestToolStripMenuItem_Click);
             // 
             // refreshRequestsToolStripMenuItem
             // 
@@ -150,7 +152,7 @@ namespace IT488_Leave_Request_Dashboard
             this.refreshRequestsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.refreshRequestsToolStripMenuItem.Name = "refreshRequestsToolStripMenuItem";
             this.refreshRequestsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5);
-            this.refreshRequestsToolStripMenuItem.Size = new System.Drawing.Size(135, 48);
+            this.refreshRequestsToolStripMenuItem.Size = new System.Drawing.Size(110, 38);
             this.refreshRequestsToolStripMenuItem.Text = "Refresh Requests";
             // 
             // filterRequestsToolStripMenuItem
@@ -159,7 +161,7 @@ namespace IT488_Leave_Request_Dashboard
             this.filterRequestsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.filterRequestsToolStripMenuItem.Name = "filterRequestsToolStripMenuItem";
             this.filterRequestsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5);
-            this.filterRequestsToolStripMenuItem.Size = new System.Drawing.Size(119, 48);
+            this.filterRequestsToolStripMenuItem.Size = new System.Drawing.Size(97, 38);
             this.filterRequestsToolStripMenuItem.Text = "Filter Requests";
             // 
             // dataGridView1
@@ -180,12 +182,11 @@ namespace IT488_Leave_Request_Dashboard
             this.endDateDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.temprequestsBindingSource1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dataGridView1.Location = new System.Drawing.Point(206, 52);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(154, 42);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1221, 712);
+            this.dataGridView1.Size = new System.Drawing.Size(916, 579);
             this.dataGridView1.TabIndex = 3;
             // 
             // iDDataGridViewTextBoxColumn
@@ -299,14 +300,13 @@ namespace IT488_Leave_Request_Dashboard
             // 
             // requests_form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1427, 764);
+            this.ClientSize = new System.Drawing.Size(1070, 621);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "requests_form";
             this.Text = "Leave Request Dashboard";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.requests_form_Closed);
