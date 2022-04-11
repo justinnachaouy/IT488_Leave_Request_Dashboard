@@ -13,9 +13,6 @@ namespace IT488_Leave_Request_Dashboard
     public partial class request_off : Form
     {
         private Controller controller;
-        private object menuStrip2;
-        private object leave_request_dashboardDataSet1;
-        private object temprequestsTableAdapter1;
 
         public request_off()
         {

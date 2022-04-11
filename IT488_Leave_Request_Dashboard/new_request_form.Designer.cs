@@ -346,7 +346,6 @@ namespace IT488_Leave_Request_Dashboard
             this.Name = "new_request_form";
             this.Text = "Leave Request Dashboard";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.requests_form_Closed);
-            this.Load += new System.EventHandler(this.new_request_form_Load);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.temprequestsBindingSource1)).EndInit();
