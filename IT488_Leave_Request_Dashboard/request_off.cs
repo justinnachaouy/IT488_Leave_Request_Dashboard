@@ -38,5 +38,10 @@ namespace IT488_Leave_Request_Dashboard
             MessageBox.Show("Request Succesfully Submitted");
             cancel_butt.Visible = true;
         }
+
+        private void submit_butt_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

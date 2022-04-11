@@ -49,7 +49,7 @@
             this.label1.Location = new System.Drawing.Point(28, 49);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 19);
+            this.label1.Size = new System.Drawing.Size(101, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "All Day Leave";
             // 
@@ -62,7 +62,7 @@
             this.comboBox1.Location = new System.Drawing.Point(211, 49);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 27);
+            this.comboBox1.Size = new System.Drawing.Size(150, 24);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -73,7 +73,7 @@
             this.label2.Location = new System.Drawing.Point(570, 51);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 19);
+            this.label2.Size = new System.Drawing.Size(103, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Request Type";
             // 
@@ -82,7 +82,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(141, 195);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(299, 27);
+            this.dateTimePicker1.Size = new System.Drawing.Size(299, 23);
             this.dateTimePicker1.TabIndex = 3;
             // 
             // comboBox2
@@ -97,7 +97,7 @@
             this.comboBox2.Location = new System.Drawing.Point(766, 48);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(150, 27);
+            this.comboBox2.Size = new System.Drawing.Size(150, 24);
             this.comboBox2.TabIndex = 4;
             // 
             // label3
@@ -107,7 +107,7 @@
             this.label3.Location = new System.Drawing.Point(32, 195);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 22);
+            this.label3.Size = new System.Drawing.Size(61, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Start Date";
             // 
@@ -117,7 +117,7 @@
             this.label4.Location = new System.Drawing.Point(570, 197);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 19);
+            this.label4.Size = new System.Drawing.Size(71, 16);
             this.label4.TabIndex = 6;
             this.label4.Text = "End Date";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -126,7 +126,7 @@
             // 
             this.dateTimePicker2.Location = new System.Drawing.Point(694, 189);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(294, 27);
+            this.dateTimePicker2.Size = new System.Drawing.Size(294, 23);
             this.dateTimePicker2.TabIndex = 7;
             // 
             // richTextBox1
@@ -142,7 +142,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 303);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(144, 19);
+            this.label5.Size = new System.Drawing.Size(127, 16);
             this.label5.TabIndex = 9;
             this.label5.Text = "Comments/Notes";
             // 
@@ -154,6 +154,7 @@
             this.submit_butt.TabIndex = 10;
             this.submit_butt.Text = "Submit";
             this.submit_butt.UseVisualStyleBackColor = true;
+            this.submit_butt.Click += new System.EventHandler(this.submit_butt_Click_1);
             // 
             // cancel_butt
             // 
@@ -167,7 +168,7 @@
             // 
             // request_off
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::IT488_Leave_Request_Dashboard.Properties.Resources.dashboard1;
             this.ClientSize = new System.Drawing.Size(1000, 534);

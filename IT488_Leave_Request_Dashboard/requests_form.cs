@@ -17,7 +17,7 @@ namespace IT488_Leave_Request_Dashboard
     {
         private Controller controller;
 
-        request_off new_request_form;
+        new_request_form frmNR;
 
         public requests_form()
         {
@@ -26,7 +26,7 @@ namespace IT488_Leave_Request_Dashboard
 
         void new_request_form_FormClosed(object sender, FormClosedEventArgs e)
         {
-            new_request_form = null;  //If form is closed make sure reference is set to null
+            frmNR = null;  //If form is closed make sure reference is set to null
             Show();
         }
 
@@ -83,13 +83,13 @@ namespace IT488_Leave_Request_Dashboard
 
         private void newRequestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (new_request_form == null)
+            if (frmNR == null)
             {
-                new_request_form = new request_off();   //Create form if not created
-                new_request_form.FormClosed += new_request_form_FormClosed;  //Add eventhandler to cleanup after form closes
+                frmNR = new new_request_form();   //Create form if not created
+                frmNR.FormClosed += new_request_form_FormClosed;  //Add eventhandler to cleanup after form closes
             }
 
-            new_request_form.Show(this);  //Show Form assigning this form as the forms owner
+            frmNR.Show(this);  //Show Form assigning this form as the forms owner
             Hide();
         }
     }

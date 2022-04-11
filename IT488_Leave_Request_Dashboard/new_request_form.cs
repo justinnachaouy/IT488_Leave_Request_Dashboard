@@ -13,17 +13,41 @@ using System.Configuration;
 
 namespace IT488_Leave_Request_Dashboard
 {
-    public partial class new_requests_form : Form
+    public partial class new_request_form : Form
     {
 
         private Controller controller;
 
-        public new_requests_form()
+        public new_request_form()
         {
             InitializeComponent();
+            menuStrip2.Renderer = new MyRenderer();
         }
 
-        private void requests_form_Load(object sender, EventArgs e)
+        private class MyRenderer : ToolStripProfessionalRenderer
+        {
+            public MyRenderer() : base(new MyColors()) { }
+        }
+
+        private class MyColors : ProfessionalColorTable
+        {
+            public override Color MenuItemSelected
+            {
+                get { return Color.LightGray; }
+            }
+            public override Color MenuItemSelectedGradientBegin
+            {
+                get { return Color.LightGray; }
+            }
+            public override Color MenuItemSelectedGradientEnd
+            {
+                get { return Color.LightGray; }
+            }
+        }    
+
+
+
+        private void new_request_form_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'leave_request_dashboardDataSet1.temprequests' table. You can move, or remove it, as needed.
             this.temprequestsTableAdapter1.Fill(this.leave_request_dashboardDataSet1.temprequests);
@@ -50,39 +74,28 @@ namespace IT488_Leave_Request_Dashboard
 
         }
 
+        private void AllDayLeave_TextChanged(object sender, EventArgs e)
+        {
+            if (AllDayLeave_combo.Text == "No")
+            {
+                dateTimePicker2.Visible = false;
+                EndDate_label.Visible = false;
+            }
+            else
+            {
+                dateTimePicker2.Visible = true;
+                EndDate_label.Visible = true;
+            }
+            
+            
+            
+        }
+
+
         private void requests_form_Closed(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void testToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Create DataTable and Select all Records in Orders Table
-            //DataTable dt;
-            //string text = controller.GetRole();
-            //MessageBox.Show(text);
-
-
-
-            // Create DataTable and Select all Records in Orders Table
-            DataTable dt;
-            dt = controller.GetRole();
-
-            // Change the datasource on our dataGridDatabaseViewer to our DataTable and then display on screen
-            dataGridView1.DataSource = dt;
-            new_requests_form frm = new request_off();
-            frm.ShowDialog();
-
-        }
-
-        private class dataGridView1
-        {
-            public static DataTable DataSource { get; internal set; }
-        }
-
-        public static implicit operator new_requests_form(request_off v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
