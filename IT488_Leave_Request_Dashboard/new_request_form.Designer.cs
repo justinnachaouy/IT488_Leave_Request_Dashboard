@@ -47,22 +47,20 @@ namespace IT488_Leave_Request_Dashboard
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.StartDate_picker = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.EndTime_label = new System.Windows.Forms.Label();
+            this.StartTime_label = new System.Windows.Forms.Label();
+            this.StartTime_combo = new System.Windows.Forms.ComboBox();
+            this.EndTime_combo = new System.Windows.Forms.ComboBox();
             this.EndDate_label = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.AllDayLeave_combo = new System.Windows.Forms.ComboBox();
+            this.EndDate_picker = new System.Windows.Forms.DateTimePicker();
+            this.StartDate_label = new System.Windows.Forms.Label();
+            this.RequestingSpecificTime_combo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.submit_butt = new System.Windows.Forms.Button();
-            this.cancel_butt = new System.Windows.Forms.Button();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.temprequestsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.leave_request_dashboardDataSet1)).BeginInit();
@@ -78,22 +76,27 @@ namespace IT488_Leave_Request_Dashboard
             // 
             this.menuStrip2.AutoSize = false;
             this.menuStrip2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.menuStrip2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createRequestToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1427, 52);
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(5);
+            this.menuStrip2.Size = new System.Drawing.Size(1070, 42);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
             // 
             // createRequestToolStripMenuItem
             // 
             this.createRequestToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.createRequestToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.createRequestToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.createRequestToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.createRequestToolStripMenuItem.Name = "createRequestToolStripMenuItem";
-            this.createRequestToolStripMenuItem.Size = new System.Drawing.Size(123, 48);
-            this.createRequestToolStripMenuItem.Text = "Create Request";
+            this.createRequestToolStripMenuItem.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.createRequestToolStripMenuItem.Size = new System.Drawing.Size(106, 32);
+            this.createRequestToolStripMenuItem.Text = "Submit Request";
+            this.createRequestToolStripMenuItem.Click += new System.EventHandler(this.createRequestToolStripMenuItem_Click);
             // 
             // temprequestsBindingSource1
             // 
@@ -133,35 +136,36 @@ namespace IT488_Leave_Request_Dashboard
             // 
             this.myLeaveRequestsToolStripMenuItem.Name = "myLeaveRequestsToolStripMenuItem";
             this.myLeaveRequestsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.myLeaveRequestsToolStripMenuItem.Size = new System.Drawing.Size(164, 37);
+            this.myLeaveRequestsToolStripMenuItem.Size = new System.Drawing.Size(141, 33);
             this.myLeaveRequestsToolStripMenuItem.Text = "My Leave Requests";
+            this.myLeaveRequestsToolStripMenuItem.Click += new System.EventHandler(this.myLeaveRequestsToolStripMenuItem_Click);
             // 
             // myLeaveBalancesToolStripMenuItem
             // 
             this.myLeaveBalancesToolStripMenuItem.Name = "myLeaveBalancesToolStripMenuItem";
             this.myLeaveBalancesToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.myLeaveBalancesToolStripMenuItem.Size = new System.Drawing.Size(164, 37);
+            this.myLeaveBalancesToolStripMenuItem.Size = new System.Drawing.Size(141, 33);
             this.myLeaveBalancesToolStripMenuItem.Text = "My Leave Balances";
             // 
             // companyHolidaysToolStripMenuItem
             // 
             this.companyHolidaysToolStripMenuItem.Name = "companyHolidaysToolStripMenuItem";
             this.companyHolidaysToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.companyHolidaysToolStripMenuItem.Size = new System.Drawing.Size(164, 37);
+            this.companyHolidaysToolStripMenuItem.Size = new System.Drawing.Size(141, 33);
             this.companyHolidaysToolStripMenuItem.Text = "Company Holidays";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(164, 37);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(141, 33);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
             this.logOutToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(164, 37);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(141, 33);
             this.logOutToolStripMenuItem.Text = "Log out";
             // 
             // menuStrip1
@@ -177,10 +181,10 @@ namespace IT488_Leave_Request_Dashboard
             this.aboutToolStripMenuItem,
             this.logOutToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 52);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 42);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 6, 0, 6);
-            this.menuStrip1.Size = new System.Drawing.Size(181, 712);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 5, 0, 5);
+            this.menuStrip1.Size = new System.Drawing.Size(154, 579);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -188,11 +192,9 @@ namespace IT488_Leave_Request_Dashboard
             // 
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(197, 427);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(162, 333);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1074, 225);
+            this.groupBox1.Size = new System.Drawing.Size(901, 276);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Comments/Notes:";
@@ -201,64 +203,64 @@ namespace IT488_Leave_Request_Dashboard
             // 
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(4, 20);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Location = new System.Drawing.Point(3, 16);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1066, 201);
+            this.textBox1.Size = new System.Drawing.Size(895, 257);
             this.textBox1.TabIndex = 0;
             // 
-            // dateTimePicker1
+            // StartDate_picker
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 53);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(265, 23);
-            this.dateTimePicker1.TabIndex = 5;
+            this.StartDate_picker.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartDate_picker.Location = new System.Drawing.Point(41, 51);
+            this.StartDate_picker.Name = "StartDate_picker";
+            this.StartDate_picker.Size = new System.Drawing.Size(200, 20);
+            this.StartDate_picker.TabIndex = 5;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.EndTime_label);
+            this.groupBox2.Controls.Add(this.StartTime_label);
+            this.groupBox2.Controls.Add(this.StartTime_combo);
+            this.groupBox2.Controls.Add(this.EndTime_combo);
             this.groupBox2.Controls.Add(this.EndDate_label);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.EndDate_picker);
+            this.groupBox2.Controls.Add(this.StartDate_label);
+            this.groupBox2.Controls.Add(this.StartDate_picker);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(197, 261);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(162, 174);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1213, 144);
+            this.groupBox2.Size = new System.Drawing.Size(901, 153);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Request Date/Time";
             // 
-            // label4
+            // EndTime_label
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(412, 97);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 17);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "To";
+            this.EndTime_label.AutoSize = true;
+            this.EndTime_label.Location = new System.Drawing.Point(406, 88);
+            this.EndTime_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.EndTime_label.Name = "EndTime_label";
+            this.EndTime_label.Size = new System.Drawing.Size(64, 13);
+            this.EndTime_label.TabIndex = 13;
+            this.EndTime_label.Text = "End Time:";
+            this.EndTime_label.Visible = false;
             // 
-            // label2
+            // StartTime_label
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 105);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 17);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Time:";
+            this.StartTime_label.AutoSize = true;
+            this.StartTime_label.Location = new System.Drawing.Point(38, 88);
+            this.StartTime_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.StartTime_label.Name = "StartTime_label";
+            this.StartTime_label.Size = new System.Drawing.Size(69, 13);
+            this.StartTime_label.TabIndex = 12;
+            this.StartTime_label.Text = "Start Time:";
+            this.StartTime_label.Visible = false;
             // 
-            // comboBox1
+            // StartTime_combo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.StartTime_combo.FormattingEnabled = true;
+            this.StartTime_combo.Items.AddRange(new object[] {
             "07:00 AM",
             "07:15 AM",
             "07:30 AM",
@@ -287,16 +289,16 @@ namespace IT488_Leave_Request_Dashboard
             "12:15 PM",
             "12:30 AM",
             "12:45 AM"});
-            this.comboBox1.Location = new System.Drawing.Point(82, 97);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 25);
-            this.comboBox1.TabIndex = 10;
+            this.StartTime_combo.Location = new System.Drawing.Point(41, 111);
+            this.StartTime_combo.Name = "StartTime_combo";
+            this.StartTime_combo.Size = new System.Drawing.Size(200, 21);
+            this.StartTime_combo.TabIndex = 10;
+            this.StartTime_combo.Visible = false;
             // 
-            // comboBox2
+            // EndTime_combo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.EndTime_combo.FormattingEnabled = true;
+            this.EndTime_combo.Items.AddRange(new object[] {
             "07:00 PM",
             "07:15 PM",
             "07:30 PM",
@@ -325,76 +327,72 @@ namespace IT488_Leave_Request_Dashboard
             "12:15 PM",
             "12:30 PM",
             "12:45 PM"});
-            this.comboBox2.Location = new System.Drawing.Point(616, 97);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(160, 25);
-            this.comboBox2.TabIndex = 11;
+            this.EndTime_combo.Location = new System.Drawing.Point(409, 111);
+            this.EndTime_combo.Name = "EndTime_combo";
+            this.EndTime_combo.Size = new System.Drawing.Size(200, 21);
+            this.EndTime_combo.TabIndex = 11;
+            this.EndTime_combo.Visible = false;
             // 
             // EndDate_label
             // 
             this.EndDate_label.AutoSize = true;
             this.EndDate_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EndDate_label.Location = new System.Drawing.Point(613, 32);
-            this.EndDate_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.EndDate_label.Location = new System.Drawing.Point(406, 28);
             this.EndDate_label.Name = "EndDate_label";
-            this.EndDate_label.Size = new System.Drawing.Size(80, 17);
+            this.EndDate_label.Size = new System.Drawing.Size(64, 13);
             this.EndDate_label.TabIndex = 8;
             this.EndDate_label.Text = "End Date:";
             // 
-            // dateTimePicker2
+            // EndDate_picker
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(616, 53);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(265, 23);
-            this.dateTimePicker2.TabIndex = 7;
+            this.EndDate_picker.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EndDate_picker.Location = new System.Drawing.Point(409, 51);
+            this.EndDate_picker.Name = "EndDate_picker";
+            this.EndDate_picker.Size = new System.Drawing.Size(200, 20);
+            this.EndDate_picker.TabIndex = 7;
             // 
-            // label1
+            // StartDate_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 17);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Start Date:";
+            this.StartDate_label.AutoSize = true;
+            this.StartDate_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartDate_label.Location = new System.Drawing.Point(38, 28);
+            this.StartDate_label.Name = "StartDate_label";
+            this.StartDate_label.Size = new System.Drawing.Size(69, 13);
+            this.StartDate_label.TabIndex = 6;
+            this.StartDate_label.Text = "Start Date:";
             // 
-            // AllDayLeave_combo
+            // RequestingSpecificTime_combo
             // 
-            this.AllDayLeave_combo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.AllDayLeave_combo.FormattingEnabled = true;
-            this.AllDayLeave_combo.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
-            this.AllDayLeave_combo.Location = new System.Drawing.Point(45, 72);
-            this.AllDayLeave_combo.Margin = new System.Windows.Forms.Padding(4);
-            this.AllDayLeave_combo.Name = "AllDayLeave_combo";
-            this.AllDayLeave_combo.Size = new System.Drawing.Size(220, 24);
-            this.AllDayLeave_combo.TabIndex = 7;
-            this.AllDayLeave_combo.Text = "Yes";
-            this.AllDayLeave_combo.TextChanged += new System.EventHandler(this.AllDayLeave_TextChanged);
+            this.RequestingSpecificTime_combo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.RequestingSpecificTime_combo.FormattingEnabled = true;
+            this.RequestingSpecificTime_combo.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
+            this.RequestingSpecificTime_combo.Location = new System.Drawing.Point(41, 66);
+            this.RequestingSpecificTime_combo.Name = "RequestingSpecificTime_combo";
+            this.RequestingSpecificTime_combo.Size = new System.Drawing.Size(200, 21);
+            this.RequestingSpecificTime_combo.TabIndex = 7;
+            this.RequestingSpecificTime_combo.Text = "No";
+            this.RequestingSpecificTime_combo.TextChanged += new System.EventHandler(this.AllDayLeave_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(42, 38);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(38, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 16);
+            this.label3.Size = new System.Drawing.Size(218, 13);
             this.label3.TabIndex = 8;
-            this.label3.Text = "All Day Leave";
+            this.label3.Text = "Requesting leave for a specific time?";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(538, 38);
+            this.label5.Location = new System.Drawing.Point(406, 34);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 16);
+            this.label5.Size = new System.Drawing.Size(86, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "Request Type";
             // 
@@ -408,62 +406,41 @@ namespace IT488_Leave_Request_Dashboard
             "Personal",
             "Sick",
             "Family"});
-            this.comboBox3.Location = new System.Drawing.Point(541, 72);
+            this.comboBox3.Location = new System.Drawing.Point(409, 66);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(210, 24);
+            this.comboBox3.Size = new System.Drawing.Size(200, 21);
             this.comboBox3.TabIndex = 10;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.RequestingSpecificTime_combo);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.comboBox3);
-            this.groupBox3.Controls.Add(this.AllDayLeave_combo);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(197, 97);
+            this.groupBox3.Location = new System.Drawing.Point(162, 51);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1046, 143);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Size = new System.Drawing.Size(901, 116);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Request Info";
             // 
-            // submit_butt
-            // 
-            this.submit_butt.Location = new System.Drawing.Point(490, 693);
-            this.submit_butt.Name = "submit_butt";
-            this.submit_butt.Size = new System.Drawing.Size(116, 27);
-            this.submit_butt.TabIndex = 12;
-            this.submit_butt.Text = "Submit";
-            this.submit_butt.UseVisualStyleBackColor = true;
-            this.submit_butt.Click += new System.EventHandler(this.submit_butt_Click);
-            // 
-            // cancel_butt
-            // 
-            this.cancel_butt.Location = new System.Drawing.Point(765, 693);
-            this.cancel_butt.Name = "cancel_butt";
-            this.cancel_butt.Size = new System.Drawing.Size(112, 26);
-            this.cancel_butt.TabIndex = 13;
-            this.cancel_butt.Text = "Cancel";
-            this.cancel_butt.UseVisualStyleBackColor = true;
-            this.cancel_butt.Click += new System.EventHandler(this.cancel_butt_Click);
-            // 
             // new_request_form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1427, 764);
-            this.Controls.Add(this.cancel_butt);
-            this.Controls.Add(this.submit_butt);
+            this.ClientSize = new System.Drawing.Size(1070, 621);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "new_request_form";
             this.Text = "Leave Request Dashboard";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.requests_form_Closed);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.temprequestsBindingSource1)).EndInit();
@@ -501,21 +478,19 @@ namespace IT488_Leave_Request_Dashboard
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ToolStripMenuItem createRequestToolStripMenuItem;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker StartDate_picker;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label EndDate_label;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox AllDayLeave_combo;
+        private System.Windows.Forms.DateTimePicker EndDate_picker;
+        private System.Windows.Forms.Label StartDate_label;
+        private System.Windows.Forms.ComboBox RequestingSpecificTime_combo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox StartTime_combo;
+        private System.Windows.Forms.ComboBox EndTime_combo;
+        private System.Windows.Forms.Label StartTime_label;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button submit_butt;
-        private System.Windows.Forms.Button cancel_butt;
+        private System.Windows.Forms.Label EndTime_label;
     }
 }

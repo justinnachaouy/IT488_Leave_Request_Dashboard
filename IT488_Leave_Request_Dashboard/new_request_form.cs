@@ -16,6 +16,7 @@ namespace IT488_Leave_Request_Dashboard
     public partial class new_request_form : Form
     {
         private Controller controller;
+        bool requesting_specific_time = false;
 
         public new_request_form()
         {
@@ -75,37 +76,39 @@ namespace IT488_Leave_Request_Dashboard
 
         private void AllDayLeave_TextChanged(object sender, EventArgs e)
         {
-            if (AllDayLeave_combo.Text == "No")
+            if (RequestingSpecificTime_combo.Text == "No")
             {
-                dateTimePicker2.Visible = false;
-                EndDate_label.Visible = false;
+                EndDate_picker.Visible = true;
+                EndDate_label.Visible = true;
+                StartTime_label.Visible = false;
+                EndTime_label.Visible = false;
+                StartTime_combo.Visible = false;
+                EndTime_combo.Visible = false;
+                requesting_specific_time = false;
             }
             else
             {
-                dateTimePicker2.Visible = true;
-                EndDate_label.Visible = true;
+                EndDate_picker.Visible = false;
+                EndDate_label.Visible = false;
+                StartTime_label.Visible = true;
+                EndTime_label.Visible = true;
+                StartTime_combo.Visible = true;
+                EndTime_combo.Visible = true;
+                requesting_specific_time = true;
             }
             
             
             
         }
 
-
-        private void requests_form_Closed(object sender, EventArgs e)
+        private void myLeaveRequestsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
-        private void submit_butt_Click(object sender, EventArgs e)
+        private void createRequestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Request Submitted Succesfully!");
-            cancel_butt.Visible = true;
-        }
-
-        private void cancel_butt_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Request Canceled");
-            submit_butt.Visible = true;
         }
     }
 }

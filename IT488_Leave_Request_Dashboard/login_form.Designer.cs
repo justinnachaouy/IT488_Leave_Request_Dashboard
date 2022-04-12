@@ -258,6 +258,7 @@ namespace IT488_Leave_Request_Dashboard
             // 
             // login_form
             // 
+            this.AcceptButton = this.login_button;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;

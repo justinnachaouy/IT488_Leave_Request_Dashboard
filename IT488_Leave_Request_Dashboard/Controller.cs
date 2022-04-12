@@ -14,6 +14,13 @@ namespace IT488_Leave_Request_Dashboard
         public static string VarPassword { get; set; }
         public static string VarServer { get; set; }
         public static string VarDatabase { get; set; }
+        public static bool Requesting_Specific_Time_Variable { get; set; }
+        public static string Request_Type_Variable { get; set; }
+        public static DateTime Start_Date_Variable { get; set; }
+        public static DateTime End_Date_Variable { get; set; }
+        public static string Start_Time_Variable { get; set; }
+        public static string End_Time_Variable { get; set; }
+        public static string Note_Variable { get; set; }
 
     }
 
@@ -52,13 +59,13 @@ namespace IT488_Leave_Request_Dashboard
 
         }
 
-        // Customer Tables
-        public DataTable GetCustomers()
+        // SQL Command to get all requests 
+        public DataTable GetAllRequests()
         {
 
             cnn = new SqlConnection(connectionString);
             cnn.Open();
-            string sql = "select * from Customers;";
+            string sql = "select * from temprequests;";
             SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
 
             // Create DataTable and store our records there
@@ -67,6 +74,25 @@ namespace IT488_Leave_Request_Dashboard
 
             return dt;
         }
+
+        // SQL Command to insert a request 
+        public DataTable CreateRequest()
+        {
+
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            string sql = "INSERT INTO temprequests ([First Name],[Last Name],[Type],[Status],[ApproverFirstName],[ApproverLastName],[Start Date],[End Date]) VALUES ([First Name],[Last Name],[Type],[Status],[ApproverFirstName],[ApproverLastName],[Start Date],[End Date]);";
+            SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
+
+            // Create DataTable and store our records there
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
+
+
+
 
         public DataTable GetRole()
         {
@@ -85,72 +111,13 @@ namespace IT488_Leave_Request_Dashboard
             return dt;
         }
 
-        public string GetCustomerCount()
-        {
-            Int32 count = 0;
-
-            cnn = new SqlConnection(connectionString);
-            cnn.Open();
-
-            string countQuery = "select count(*) from Customers;";
-            SqlDataAdapter da = new SqlDataAdapter(countQuery, cnn);
-
-
-            //string countQuery = "select count(*) from Customers;";
-            //SqlCommand cmd = new SqlCommand(countQuery, cnn);
-            try
-            {
-                count = Convert.ToInt32(da.ToString());
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            return count.ToString();
-        }
-
         // Employee Tables
-
         public DataTable GetEmployees()
         {
 
             cnn = new SqlConnection(connectionString);
             cnn.Open();
             string sql = "select * from Employees;";
-            SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
-
-            // Create DataTable and store our records there
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            return dt;
-        }
-
-        public string GetEmployeeCount()
-        {
-            Int32 count = 0;
-            cnn = new SqlConnection(connectionString);
-            cnn.Open();
-            string countQuery = "select count(*) from Employees;";
-            SqlCommand cmd = new SqlCommand(countQuery, cnn);
-            try
-            {
-                count = Convert.ToInt32(cmd.ExecuteScalar());
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            return count.ToString();
-        }
-
-        // Order Tables
-        public DataTable GetOrders()
-        {
-
-            cnn = new SqlConnection(connectionString);
-            cnn.Open();
-            string sql = "select * from Orders;";
             SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
 
             // Create DataTable and store our records there
