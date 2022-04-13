@@ -76,23 +76,16 @@ namespace IT488_Leave_Request_Dashboard
         }
 
         // SQL Command to insert a request 
-        public DataTable CreateRequest()
+        public bool CreateRequest(string FirstName, string LastName, string Type, string Status, string StartDate, string EndDate)
         {
 
             cnn = new SqlConnection(connectionString);
             cnn.Open();
-            string sql = "INSERT INTO temprequests ([First Name],[Last Name],[Type],[Status],[ApproverFirstName],[ApproverLastName],[Start Date],[End Date]) VALUES ([First Name],[Last Name],[Type],[Status],[ApproverFirstName],[ApproverLastName],[Start Date],[End Date]);";
+            string sql = "INSERT INTO temprequests (\"First Name\",\"Last Name\",\"Type\",\"Status\",\"ApproverFirstName\",\"ApproverLastName\",\"Start Date\",\"End Date\") VALUES (\'" + FirstName + "\',\'" + LastName + "\',\'" + Type + "\',\'" + Status + "\',\'" + "Joe" + "\',\'" + "Smith" + "\',\'" + StartDate + "\',\'" + EndDate + "\')";
             SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
 
-            // Create DataTable and store our records there
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            return dt;
+            return true;
         }
-
-
-
 
         public DataTable GetRole()
         {

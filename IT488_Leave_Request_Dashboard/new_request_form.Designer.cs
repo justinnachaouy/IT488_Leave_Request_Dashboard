@@ -59,7 +59,7 @@ namespace IT488_Leave_Request_Dashboard
             this.RequestingSpecificTime_combo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.RequestType_combo = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.temprequestsBindingSource1)).BeginInit();
@@ -396,27 +396,27 @@ namespace IT488_Leave_Request_Dashboard
             this.label5.TabIndex = 9;
             this.label5.Text = "Request Type";
             // 
-            // comboBox3
+            // RequestType_combo
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.RequestType_combo.FormattingEnabled = true;
+            this.RequestType_combo.Items.AddRange(new object[] {
             "Leave of Abscence",
             "Paid Time Off",
             "Maternity ",
             "Personal",
             "Sick",
             "Family"});
-            this.comboBox3.Location = new System.Drawing.Point(409, 66);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(200, 21);
-            this.comboBox3.TabIndex = 10;
+            this.RequestType_combo.Location = new System.Drawing.Point(409, 66);
+            this.RequestType_combo.Margin = new System.Windows.Forms.Padding(2);
+            this.RequestType_combo.Name = "RequestType_combo";
+            this.RequestType_combo.Size = new System.Drawing.Size(200, 21);
+            this.RequestType_combo.TabIndex = 10;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.RequestingSpecificTime_combo);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.comboBox3);
+            this.groupBox3.Controls.Add(this.RequestType_combo);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(162, 51);
@@ -489,7 +489,7 @@ namespace IT488_Leave_Request_Dashboard
         private System.Windows.Forms.ComboBox EndTime_combo;
         private System.Windows.Forms.Label StartTime_label;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox RequestType_combo;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label EndTime_label;
     }
