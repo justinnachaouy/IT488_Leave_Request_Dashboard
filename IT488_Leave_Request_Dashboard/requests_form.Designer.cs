@@ -29,7 +29,6 @@ namespace IT488_Leave_Request_Dashboard
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.myLeaveRequestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myLeaveBalancesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,19 +39,10 @@ namespace IT488_Leave_Request_Dashboard
             this.newRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshRequestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filterRequestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.temprequestsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.leave_request_dashboardDataSet1 = new IT488_Leave_Request_Dashboard.leave_request_dashboardDataSet1();
-            this.leave_request_dashboardDataSet = new IT488_Leave_Request_Dashboard.leave_request_dashboardDataSet();
-            this.temprequestsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.temprequestsTableAdapter = new IT488_Leave_Request_Dashboard.leave_request_dashboardDataSetTableAdapters.temprequestsTableAdapter();
-            this.temprequestsTableAdapter1 = new IT488_Leave_Request_Dashboard.leave_request_dashboardDataSet1TableAdapters.temprequestsTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.temprequestsBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leave_request_dashboardDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leave_request_dashboardDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.temprequestsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,34 +153,6 @@ namespace IT488_Leave_Request_Dashboard
             this.filterRequestsToolStripMenuItem.Size = new System.Drawing.Size(104, 32);
             this.filterRequestsToolStripMenuItem.Text = "Filter Requests";
             // 
-            // temprequestsBindingSource1
-            // 
-            this.temprequestsBindingSource1.DataMember = "temprequests";
-            this.temprequestsBindingSource1.DataSource = this.leave_request_dashboardDataSet1;
-            // 
-            // leave_request_dashboardDataSet1
-            // 
-            this.leave_request_dashboardDataSet1.DataSetName = "leave_request_dashboardDataSet1";
-            this.leave_request_dashboardDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // leave_request_dashboardDataSet
-            // 
-            this.leave_request_dashboardDataSet.DataSetName = "leave_request_dashboardDataSet";
-            this.leave_request_dashboardDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // temprequestsBindingSource
-            // 
-            this.temprequestsBindingSource.DataMember = "temprequests";
-            this.temprequestsBindingSource.DataSource = this.leave_request_dashboardDataSet;
-            // 
-            // temprequestsTableAdapter
-            // 
-            this.temprequestsTableAdapter.ClearBeforeFill = true;
-            // 
-            // temprequestsTableAdapter1
-            // 
-            this.temprequestsTableAdapter1.ClearBeforeFill = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -200,11 +162,22 @@ namespace IT488_Leave_Request_Dashboard
             this.dataGridView1.Size = new System.Drawing.Size(916, 579);
             this.dataGridView1.TabIndex = 3;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(35, 372);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // requests_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1070, 621);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
@@ -217,10 +190,6 @@ namespace IT488_Leave_Request_Dashboard
             this.menuStrip1.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.temprequestsBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leave_request_dashboardDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leave_request_dashboardDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.temprequestsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -238,12 +207,7 @@ namespace IT488_Leave_Request_Dashboard
         private System.Windows.Forms.ToolStripMenuItem newRequestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem refreshRequestsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filterRequestsToolStripMenuItem;
-        private leave_request_dashboardDataSet leave_request_dashboardDataSet;
-        private System.Windows.Forms.BindingSource temprequestsBindingSource;
-        private leave_request_dashboardDataSetTableAdapters.temprequestsTableAdapter temprequestsTableAdapter;
-        private leave_request_dashboardDataSet1 leave_request_dashboardDataSet1;
-        private System.Windows.Forms.BindingSource temprequestsBindingSource1;
-        private leave_request_dashboardDataSet1TableAdapters.temprequestsTableAdapter temprequestsTableAdapter1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
     }
 }

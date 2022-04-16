@@ -26,7 +26,7 @@ namespace IT488_Leave_Request_Dashboard
             Globals.VarUsername = UsernameText.Text;
             Globals.VarPassword = PasswordText.Text;
             Globals.VarServer = @"50.90.25.31";
-            Globals.VarDatabase = "leave_request_dashboard";
+            Globals.VarDatabase = "IT488_Leave_Request_db";
 
             try
             {

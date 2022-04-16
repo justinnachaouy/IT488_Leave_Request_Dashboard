@@ -61,24 +61,6 @@ namespace IT488_Leave_Request_Dashboard
             Application.Exit();
         }
 
-        private void testToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Create DataTable and Select all Records in Orders Table
-            //DataTable dt;
-            //string text = controller.GetRole();
-            //MessageBox.Show(text);
-
-
-
-            // Create DataTable and Select all Records in Orders Table
-            DataTable dt;
-            dt = controller.GetRole();
-
-            // Change the datasource on our dataGridDatabaseViewer to our DataTable and then display on screen
-            dataGridView1.DataSource = dt;
-
-        }
-
         private void newRequestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (frmNR == null)
@@ -99,6 +81,19 @@ namespace IT488_Leave_Request_Dashboard
 
             // Change the datasource on our dataGridDatabaseViewer to our DataTable and then display on screen
             dataGridView1.DataSource = dt;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            controller = new Controller("Data Source = tcp:" + Globals.VarServer + ";" +
+    "Initial Catalog = " + Globals.VarDatabase + ";" +
+    "User ID = " + Globals.VarUsername + ";" +
+    "Password = " + Globals.VarPassword + ";"
+);
+
+            // Create DataTable and Select all Records in Orders Table
+            string dt = controller.GetRole();
+            MessageBox.Show(dt);
         }
     }
 }

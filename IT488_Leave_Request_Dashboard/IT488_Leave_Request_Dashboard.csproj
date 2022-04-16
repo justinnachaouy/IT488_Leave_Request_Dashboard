@@ -48,16 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller.cs" />
-    <Compile Include="leave_request_dashboardDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>leave_request_dashboardDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="leave_request_dashboardDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>leave_request_dashboardDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="new_request_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,28 +82,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="leave_request_dashboardDataSet.xsc">
-      <DependentUpon>leave_request_dashboardDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="leave_request_dashboardDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>leave_request_dashboardDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="leave_request_dashboardDataSet.xss">
-      <DependentUpon>leave_request_dashboardDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="leave_request_dashboardDataSet1.xsc">
-      <DependentUpon>leave_request_dashboardDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="leave_request_dashboardDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>leave_request_dashboardDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="leave_request_dashboardDataSet1.xss">
-      <DependentUpon>leave_request_dashboardDataSet1.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

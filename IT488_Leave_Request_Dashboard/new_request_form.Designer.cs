@@ -32,12 +32,6 @@ namespace IT488_Leave_Request_Dashboard
             this.components = new System.ComponentModel.Container();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.createRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.temprequestsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.leave_request_dashboardDataSet1 = new IT488_Leave_Request_Dashboard.leave_request_dashboardDataSet1();
-            this.leave_request_dashboardDataSet = new IT488_Leave_Request_Dashboard.leave_request_dashboardDataSet();
-            this.temprequestsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.temprequestsTableAdapter = new IT488_Leave_Request_Dashboard.leave_request_dashboardDataSetTableAdapters.temprequestsTableAdapter();
-            this.temprequestsTableAdapter1 = new IT488_Leave_Request_Dashboard.leave_request_dashboardDataSet1TableAdapters.temprequestsTableAdapter();
             this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.myLeaveRequestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myLeaveBalancesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,10 +56,6 @@ namespace IT488_Leave_Request_Dashboard
             this.RequestType_combo = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.menuStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.temprequestsBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leave_request_dashboardDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leave_request_dashboardDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.temprequestsBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -97,34 +87,6 @@ namespace IT488_Leave_Request_Dashboard
             this.createRequestToolStripMenuItem.Size = new System.Drawing.Size(106, 32);
             this.createRequestToolStripMenuItem.Text = "Submit Request";
             this.createRequestToolStripMenuItem.Click += new System.EventHandler(this.createRequestToolStripMenuItem_Click);
-            // 
-            // temprequestsBindingSource1
-            // 
-            this.temprequestsBindingSource1.DataMember = "temprequests";
-            this.temprequestsBindingSource1.DataSource = this.leave_request_dashboardDataSet1;
-            // 
-            // leave_request_dashboardDataSet1
-            // 
-            this.leave_request_dashboardDataSet1.DataSetName = "leave_request_dashboardDataSet1";
-            this.leave_request_dashboardDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // leave_request_dashboardDataSet
-            // 
-            this.leave_request_dashboardDataSet.DataSetName = "leave_request_dashboardDataSet";
-            this.leave_request_dashboardDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // temprequestsBindingSource
-            // 
-            this.temprequestsBindingSource.DataMember = "temprequests";
-            this.temprequestsBindingSource.DataSource = this.leave_request_dashboardDataSet;
-            // 
-            // temprequestsTableAdapter
-            // 
-            this.temprequestsTableAdapter.ClearBeforeFill = true;
-            // 
-            // temprequestsTableAdapter1
-            // 
-            this.temprequestsTableAdapter1.ClearBeforeFill = true;
             // 
             // directorySearcher1
             // 
@@ -443,10 +405,6 @@ namespace IT488_Leave_Request_Dashboard
             this.Text = "Leave Request Dashboard";
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.temprequestsBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leave_request_dashboardDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leave_request_dashboardDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.temprequestsBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -462,12 +420,6 @@ namespace IT488_Leave_Request_Dashboard
 
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip2;
-        private leave_request_dashboardDataSet leave_request_dashboardDataSet;
-        private System.Windows.Forms.BindingSource temprequestsBindingSource;
-        private leave_request_dashboardDataSetTableAdapters.temprequestsTableAdapter temprequestsTableAdapter;
-        private leave_request_dashboardDataSet1 leave_request_dashboardDataSet1;
-        private System.Windows.Forms.BindingSource temprequestsBindingSource1;
-        private leave_request_dashboardDataSet1TableAdapters.temprequestsTableAdapter temprequestsTableAdapter1;
         private System.DirectoryServices.DirectorySearcher directorySearcher1;
         private System.Windows.Forms.ToolStripMenuItem myLeaveRequestsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem myLeaveBalancesToolStripMenuItem;

@@ -31,7 +31,7 @@ namespace IT488_Leave_Request_Dashboard
         public Controller()
         {
             connectionString = @"Data Source = tcp:" + Globals.VarServer + ";" +
-                               "Initial Catalog = leave_request_dashboard;" +
+                               "Initial Catalog = IT488_Leave_Request_db;" +
                                "User ID = " + Globals.VarUsername + ";" +
                                "Password = " + Globals.VarPassword + ";";
         }
@@ -65,7 +65,7 @@ namespace IT488_Leave_Request_Dashboard
 
             cnn = new SqlConnection(connectionString);
             cnn.Open();
-            string sql = "select * from temprequests;";
+            string sql = "select * from Requests;";
             SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
 
             // Create DataTable and store our records there
@@ -81,13 +81,13 @@ namespace IT488_Leave_Request_Dashboard
 
             cnn = new SqlConnection(connectionString);
             cnn.Open();
-            string sql = "INSERT INTO temprequests (\"First Name\",\"Last Name\",\"Type\",\"Status\",\"ApproverFirstName\",\"ApproverLastName\",\"Start Date\",\"End Date\") VALUES (\'" + FirstName + "\',\'" + LastName + "\',\'" + Type + "\',\'" + Status + "\',\'" + "Joe" + "\',\'" + "Smith" + "\',\'" + StartDate + "\',\'" + EndDate + "\')";
+            string sql = "INSERT INTO Requests (\"First Name\",\"Last Name\",\"Type\",\"Status\",\"ApproverFirstName\",\"ApproverLastName\",\"Start Date\",\"End Date\") VALUES (\'" + FirstName + "\',\'" + LastName + "\',\'" + Type + "\',\'" + Status + "\',\'" + "Joe" + "\',\'" + "Smith" + "\',\'" + StartDate + "\',\'" + EndDate + "\')";
             SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
 
             return true;
         }
 
-        public DataTable GetRole()
+        public String GetRole()
         {
 
             cnn = new SqlConnection(connectionString);
@@ -95,13 +95,7 @@ namespace IT488_Leave_Request_Dashboard
             string sql = "SELECT roles.NAME, members.NAME FROM sys.database_role_members role_members JOIN sys.database_principals roles ON role_members.role_principal_id = roles.principal_id JOIN sys.database_principals members ON role_members.member_principal_id = members.principal_id";
             SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
 
-            // Create DataTable and store our records there
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            string info = da.ToString();
-
-            return dt;
+            return da.ToString();
         }
 
         // Employee Tables
