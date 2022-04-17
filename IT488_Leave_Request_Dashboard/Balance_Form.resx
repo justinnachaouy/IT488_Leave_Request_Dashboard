@@ -117,41 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Deny" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Deny.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="8-web" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\8-web1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="5-web" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\5-web1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="2-web" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2-web1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1-web" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1-web1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pug-logo-stacked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pug-logo-stacked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="7-web" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\7-web1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="3-web" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3-web1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="4-web" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4-web1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="6-web" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6-web1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dashboard1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dashboard1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="checkmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\checkmark.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

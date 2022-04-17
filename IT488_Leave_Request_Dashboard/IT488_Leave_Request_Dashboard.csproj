@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Balance_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Balance_Form.Designer.cs">
+      <DependentUpon>Balance_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="new_request_form.cs">
       <SubType>Form</SubType>
@@ -68,6 +74,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Balance_Form.resx">
+      <DependentUpon>Balance_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="new_request_form.resx">
       <DependentUpon>new_request_form.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +162,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dashboard1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Deny.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
