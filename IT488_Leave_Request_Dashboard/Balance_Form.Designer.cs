@@ -51,6 +51,7 @@
             // 
             this.groupBox1.Controls.Add(this.Deny_butt);
             this.groupBox1.Controls.Add(this.Approve_butt);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(1, -1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(795, 51);
@@ -103,18 +104,20 @@
             // Name_label
             // 
             this.Name_label.AutoSize = true;
+            this.Name_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name_label.Location = new System.Drawing.Point(12, 83);
             this.Name_label.Name = "Name_label";
-            this.Name_label.Size = new System.Drawing.Size(44, 16);
+            this.Name_label.Size = new System.Drawing.Size(48, 16);
             this.Name_label.TabIndex = 2;
             this.Name_label.Text = "Name";
             // 
             // ID_label
             // 
             this.ID_label.AutoSize = true;
+            this.ID_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ID_label.Location = new System.Drawing.Point(12, 153);
             this.ID_label.Name = "ID_label";
-            this.ID_label.Size = new System.Drawing.Size(85, 16);
+            this.ID_label.Size = new System.Drawing.Size(96, 16);
             this.ID_label.TabIndex = 3;
             this.ID_label.Text = "Employee ID";
             // 
@@ -123,6 +126,7 @@
             this.groupBox2.Controls.Add(this.Pending_box);
             this.groupBox2.Controls.Add(this.Deny_box);
             this.groupBox2.Controls.Add(this.Aprrove_box);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(496, 83);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 134);
@@ -135,7 +139,7 @@
             this.Pending_box.AutoSize = true;
             this.Pending_box.Location = new System.Drawing.Point(7, 108);
             this.Pending_box.Name = "Pending_box";
-            this.Pending_box.Size = new System.Drawing.Size(79, 20);
+            this.Pending_box.Size = new System.Drawing.Size(86, 20);
             this.Pending_box.TabIndex = 2;
             this.Pending_box.Text = "Pending";
             this.Pending_box.UseVisualStyleBackColor = true;
@@ -145,7 +149,7 @@
             this.Deny_box.AutoSize = true;
             this.Deny_box.Location = new System.Drawing.Point(7, 70);
             this.Deny_box.Name = "Deny_box";
-            this.Deny_box.Size = new System.Drawing.Size(73, 20);
+            this.Deny_box.Size = new System.Drawing.Size(79, 20);
             this.Deny_box.TabIndex = 1;
             this.Deny_box.Text = "Denied";
             this.Deny_box.UseVisualStyleBackColor = true;
@@ -155,7 +159,7 @@
             this.Aprrove_box.AutoSize = true;
             this.Aprrove_box.Location = new System.Drawing.Point(7, 31);
             this.Aprrove_box.Name = "Aprrove_box";
-            this.Aprrove_box.Size = new System.Drawing.Size(89, 20);
+            this.Aprrove_box.Size = new System.Drawing.Size(97, 20);
             this.Aprrove_box.TabIndex = 0;
             this.Aprrove_box.Text = "Approved";
             this.Aprrove_box.UseVisualStyleBackColor = true;
