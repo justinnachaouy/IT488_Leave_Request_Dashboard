@@ -16,5 +16,21 @@ namespace IT488_Leave_Request_Dashboard
         {
             InitializeComponent();
         }
+
+        private void Approve_butt_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Leave Approved");
+        }
+
+        private void Deny_butt_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Leave has been Denied");
+        }
+
+        private void Cancel_butt_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Request Canceled");
+        }
     }
-}
+    }
+
