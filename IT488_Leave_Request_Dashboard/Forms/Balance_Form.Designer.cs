@@ -223,7 +223,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Balance_Form";
             this.Text = "Balance";
-            this.Load += new System.EventHandler(this.Balance_Form_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);

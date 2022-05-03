@@ -12,7 +12,6 @@ namespace IT488_Leave_Request_Dashboard
 {
     public partial class Balance_Form : Form
     {
-        private Controller controller;
 
         public Balance_Form()
         {
@@ -41,14 +40,8 @@ namespace IT488_Leave_Request_Dashboard
 
         }
 
-        private void Balance_Form_Load(object sender, EventArgs e)
-        {
-                controller = new Controller("Data Source = tcp:" + Globals.VarServer + ";" +
-                "Initial Catalog = " + Globals.VarDatabase + ";" +
-                "User ID = " + Globals.VarUsername + ";" +
-                "Password = " + Globals.VarPassword + ";"
-                );    
+       
         }
     }
-    }
+    
 
