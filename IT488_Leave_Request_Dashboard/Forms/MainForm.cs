@@ -50,6 +50,10 @@ namespace IT488_Leave_Request_Dashboard
                 btnRequests.PerformClick();
             }
 
+            if(Globals.VarRole == "HR")
+            {
+                btnEmployees.Visible = true;
+            }
         }
 
         private void ActivateButton(object senderBtn)
@@ -227,7 +231,7 @@ namespace IT488_Leave_Request_Dashboard
         {
             ActivateButton(sender);
 
-            AboutForm frm = new AboutForm();
+            EmployeesForm frm = new EmployeesForm();
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             frm.FormBorderStyle = FormBorderStyle.None;

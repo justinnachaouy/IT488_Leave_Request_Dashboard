@@ -99,6 +99,46 @@ namespace IT488_Leave_Request_Dashboard
         // End of SQL Commands to View Requests
         //
 
+        //
+        // SQL Commands to View Requests
+        //
+
+        // Manager Only - Will return all requests that match ManagerUsername 
+        public DataTable GetAllMyEmployees()
+        {
+
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            string sql = "select * from Employees where ManagerUsername = '" + Globals.VarUsername.ToString() + "';";
+            SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
+
+            // Create DataTable and store our records there
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
+
+        // HR Only - Will return all requests
+        public DataTable GetAllEmployees()
+        {
+
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            string sql = "select * from Employees";
+            SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
+
+            // Create DataTable and store our records there
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
+
+        //
+        // End of SQL Commands to View Requests
+        //
+
 
 
 

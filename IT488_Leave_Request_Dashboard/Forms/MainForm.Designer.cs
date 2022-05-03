@@ -161,6 +161,7 @@ namespace IT488_Leave_Request_Dashboard
             this.btnEmployees.Text = "Employees";
             this.btnEmployees.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEmployees.UseVisualStyleBackColor = false;
+            this.btnEmployees.Visible = false;
             this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
             // 
             // btnBalances

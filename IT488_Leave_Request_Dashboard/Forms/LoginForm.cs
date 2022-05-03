@@ -51,6 +51,39 @@ namespace IT488_Leave_Request_Dashboard
                     MessageBox.Show("Connection to " + Globals.VarServer + " was successful!");
                     MessageBox.Show("Login Successful!");
 
+                    // Check User
+                    Globals.SQLUsername = sqlController.Check_User().ToString();
+                    MessageBox.Show(Globals.SQLUsername.ToString());
+                    // End of Check User
+
+                    // Check Role
+
+                    if (sqlController.Check_Role_HR())
+                    {
+                        Globals.VarRole = "HR";
+                    }
+                    else
+                    {
+                        if (sqlController.Check_Role_Manager())
+                        {
+                            Globals.VarRole = "Manager";
+                        }
+                        else
+                        {
+                            if (sqlController.Check_Role_Employee())
+                            {
+                                Globals.VarRole = "Employee";
+                            }
+                            else
+                            {
+                                Globals.VarRole = "Unknown";
+                            }
+                        }
+                    }
+                    MessageBox.Show(Globals.VarRole.ToString());
+                    // End of Check Role
+
+
                     // Open the Form_RecordEditor
                     MainForm mainform = new MainForm();  
                     this.Hide();
@@ -69,39 +102,6 @@ namespace IT488_Leave_Request_Dashboard
                 // Displays the error message
                 MessageBox.Show("Error! Please check the error message:" + "\n" + ex.Message);
             }
-
-
-            // Check User
-            Globals.SQLUsername = sqlController.Check_User().ToString();
-            MessageBox.Show(Globals.SQLUsername.ToString());
-            // End of Check User
-
-            // Check Role
-
-            if (sqlController.Check_Role_HR())
-                {
-                    Globals.VarRole = "HR";
-                }
-                else
-                {
-                    if (sqlController.Check_Role_Manager())
-                    {
-                        Globals.VarRole = "Manager";
-                    }
-                    else
-                    {
-                        if (sqlController.Check_Role_Employee())
-                        {
-                            Globals.VarRole = "Employee";
-                        }
-                        else
-                    {
-                        Globals.VarRole = "Unknown";
-                    }    
-                    }
-                }
-                MessageBox.Show(Globals.VarRole.ToString());
-            // End of Check Role
 
         }
 
