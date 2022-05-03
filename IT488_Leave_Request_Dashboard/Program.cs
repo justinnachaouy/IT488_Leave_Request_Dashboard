@@ -14,9 +14,12 @@ namespace IT488_Leave_Request_Dashboard
         [STAThread]
         static void Main()
         {
+            Globals.VarServer = @"50.90.25.31,1433";
+            Globals.VarDatabase = "IT488_Leave_Request_db";
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new login_form());
+            Application.Run(new LoginForm());
         }
     }
 }
