@@ -58,6 +58,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Manager Options";
+            this.groupBox1.TextChanged += new System.EventHandler(this.groupBox1_TextChanged);
             // 
             // Deny_butt
             // 
@@ -205,6 +206,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Balance_Form";
             this.Text = "Balance";
+            this.Load += new System.EventHandler(this.Balance_Form_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
