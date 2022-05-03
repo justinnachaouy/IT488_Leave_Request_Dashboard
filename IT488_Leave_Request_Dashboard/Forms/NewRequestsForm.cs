@@ -13,12 +13,12 @@ using System.Configuration;
 
 namespace IT488_Leave_Request_Dashboard
 {
-    public partial class new_request_form : Form
+    public partial class NewRequestsForm : Form
     {
-        private Controller controller;
+        private SqlController sqlController;
         bool requesting_specific_time = false;
 
-        public new_request_form()
+        public NewRequestsForm()
         {
             InitializeComponent();
             menuStrip2.Renderer = new MyRenderer();
@@ -48,7 +48,7 @@ namespace IT488_Leave_Request_Dashboard
 
         private void new_request_form_Load(object sender, EventArgs e)
         {
-            controller = new Controller("Data Source = tcp:" + Globals.VarServer + ";" +
+            sqlController = new SqlController("Data Source = tcp:" + Globals.VarServer + ";" +
             "Initial Catalog = " + Globals.VarDatabase + ";" +
             "User ID = " + Globals.VarUsername + ";" +
             "Password = " + Globals.VarPassword + ";"
@@ -91,14 +91,14 @@ namespace IT488_Leave_Request_Dashboard
 
         private void createRequestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            controller = new Controller("Data Source = tcp:" + Globals.VarServer + ";" +
+            sqlController = new SqlController("Data Source = tcp:" + Globals.VarServer + ";" +
                 "Initial Catalog = " + Globals.VarDatabase + ";" +
                 "User ID = " + Globals.VarUsername + ";" +
                 "Password = " + Globals.VarPassword + ";" 
             );
 
             // Create DataTable and Select all Records in Orders Table
-            controller.CreateRequest("HR", "Manager", "Personal", "Pending", "01/01/2022", "01/01/2022");
+            sqlController.CreateRequest("HR", "Manager", "Personal", "Pending", "01/01/2022", "01/01/2022");
             MessageBox.Show("Request Submitted Succesfully!");
             this.Close();
 

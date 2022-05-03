@@ -53,8 +53,10 @@
             this.groupBox1.Controls.Add(this.Approve_butt);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(1, -1);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(795, 51);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(596, 41);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Manager Options";
@@ -64,9 +66,10 @@
             // 
             this.Deny_butt.Image = global::IT488_Leave_Request_Dashboard.Properties.Resources.Deny;
             this.Deny_butt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Deny_butt.Location = new System.Drawing.Point(82, 18);
+            this.Deny_butt.Location = new System.Drawing.Point(62, 15);
+            this.Deny_butt.Margin = new System.Windows.Forms.Padding(2);
             this.Deny_butt.Name = "Deny_butt";
-            this.Deny_butt.Size = new System.Drawing.Size(53, 28);
+            this.Deny_butt.Size = new System.Drawing.Size(64, 23);
             this.Deny_butt.TabIndex = 2;
             this.Deny_butt.Text = "Deny";
             this.Deny_butt.UseVisualStyleBackColor = true;
@@ -75,9 +78,10 @@
             // Approve_butt
             // 
             this.Approve_butt.Image = global::IT488_Leave_Request_Dashboard.Properties.Resources.checkmark;
-            this.Approve_butt.Location = new System.Drawing.Point(0, 21);
+            this.Approve_butt.Location = new System.Drawing.Point(0, 17);
+            this.Approve_butt.Margin = new System.Windows.Forms.Padding(2);
             this.Approve_butt.Name = "Approve_butt";
-            this.Approve_butt.Size = new System.Drawing.Size(76, 23);
+            this.Approve_butt.Size = new System.Drawing.Size(57, 19);
             this.Approve_butt.TabIndex = 0;
             this.Approve_butt.Text = "Aprove";
             this.Approve_butt.UseVisualStyleBackColor = true;
@@ -85,9 +89,10 @@
             // 
             // Search_butt
             // 
-            this.Search_butt.Location = new System.Drawing.Point(127, 194);
+            this.Search_butt.Location = new System.Drawing.Point(95, 158);
+            this.Search_butt.Margin = new System.Windows.Forms.Padding(2);
             this.Search_butt.Name = "Search_butt";
-            this.Search_butt.Size = new System.Drawing.Size(71, 24);
+            this.Search_butt.Size = new System.Drawing.Size(53, 20);
             this.Search_butt.TabIndex = 1;
             this.Search_butt.Text = "Search";
             this.Search_butt.UseVisualStyleBackColor = true;
@@ -95,20 +100,22 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 239);
+            this.dataGridView1.Location = new System.Drawing.Point(1, 194);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(795, 199);
+            this.dataGridView1.Size = new System.Drawing.Size(596, 162);
             this.dataGridView1.TabIndex = 1;
             // 
             // Name_label
             // 
             this.Name_label.AutoSize = true;
             this.Name_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name_label.Location = new System.Drawing.Point(12, 83);
+            this.Name_label.Location = new System.Drawing.Point(9, 67);
+            this.Name_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Name_label.Name = "Name_label";
-            this.Name_label.Size = new System.Drawing.Size(48, 16);
+            this.Name_label.Size = new System.Drawing.Size(39, 13);
             this.Name_label.TabIndex = 2;
             this.Name_label.Text = "Name";
             // 
@@ -116,9 +123,10 @@
             // 
             this.ID_label.AutoSize = true;
             this.ID_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID_label.Location = new System.Drawing.Point(12, 153);
+            this.ID_label.Location = new System.Drawing.Point(9, 124);
+            this.ID_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ID_label.Name = "ID_label";
-            this.ID_label.Size = new System.Drawing.Size(96, 16);
+            this.ID_label.Size = new System.Drawing.Size(78, 13);
             this.ID_label.TabIndex = 3;
             this.ID_label.Text = "Employee ID";
             // 
@@ -128,9 +136,11 @@
             this.groupBox2.Controls.Add(this.Deny_box);
             this.groupBox2.Controls.Add(this.Aprrove_box);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(496, 83);
+            this.groupBox2.Location = new System.Drawing.Point(372, 67);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 134);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(150, 109);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "View by:";
@@ -138,9 +148,10 @@
             // Pending_box
             // 
             this.Pending_box.AutoSize = true;
-            this.Pending_box.Location = new System.Drawing.Point(7, 108);
+            this.Pending_box.Location = new System.Drawing.Point(5, 88);
+            this.Pending_box.Margin = new System.Windows.Forms.Padding(2);
             this.Pending_box.Name = "Pending_box";
-            this.Pending_box.Size = new System.Drawing.Size(86, 20);
+            this.Pending_box.Size = new System.Drawing.Size(72, 17);
             this.Pending_box.TabIndex = 2;
             this.Pending_box.Text = "Pending";
             this.Pending_box.UseVisualStyleBackColor = true;
@@ -148,9 +159,10 @@
             // Deny_box
             // 
             this.Deny_box.AutoSize = true;
-            this.Deny_box.Location = new System.Drawing.Point(7, 70);
+            this.Deny_box.Location = new System.Drawing.Point(5, 57);
+            this.Deny_box.Margin = new System.Windows.Forms.Padding(2);
             this.Deny_box.Name = "Deny_box";
-            this.Deny_box.Size = new System.Drawing.Size(79, 20);
+            this.Deny_box.Size = new System.Drawing.Size(66, 17);
             this.Deny_box.TabIndex = 1;
             this.Deny_box.Text = "Denied";
             this.Deny_box.UseVisualStyleBackColor = true;
@@ -158,32 +170,36 @@
             // Aprrove_box
             // 
             this.Aprrove_box.AutoSize = true;
-            this.Aprrove_box.Location = new System.Drawing.Point(7, 31);
+            this.Aprrove_box.Location = new System.Drawing.Point(5, 25);
+            this.Aprrove_box.Margin = new System.Windows.Forms.Padding(2);
             this.Aprrove_box.Name = "Aprrove_box";
-            this.Aprrove_box.Size = new System.Drawing.Size(97, 20);
+            this.Aprrove_box.Size = new System.Drawing.Size(80, 17);
             this.Aprrove_box.TabIndex = 0;
             this.Aprrove_box.Text = "Approved";
             this.Aprrove_box.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(143, 83);
+            this.textBox1.Location = new System.Drawing.Point(107, 67);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 22);
+            this.textBox1.Size = new System.Drawing.Size(110, 20);
             this.textBox1.TabIndex = 5;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(143, 150);
+            this.textBox2.Location = new System.Drawing.Point(107, 122);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(146, 22);
+            this.textBox2.Size = new System.Drawing.Size(110, 20);
             this.textBox2.TabIndex = 6;
             // 
             // Cancel_butt
             // 
-            this.Cancel_butt.Location = new System.Drawing.Point(246, 195);
+            this.Cancel_butt.Location = new System.Drawing.Point(184, 158);
+            this.Cancel_butt.Margin = new System.Windows.Forms.Padding(2);
             this.Cancel_butt.Name = "Cancel_butt";
-            this.Cancel_butt.Size = new System.Drawing.Size(75, 23);
+            this.Cancel_butt.Size = new System.Drawing.Size(56, 19);
             this.Cancel_butt.TabIndex = 7;
             this.Cancel_butt.Text = "Cancel";
             this.Cancel_butt.UseVisualStyleBackColor = true;
@@ -191,9 +207,9 @@
             // 
             // Balance_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.Cancel_butt);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.Search_butt);
@@ -204,6 +220,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Balance_Form";
             this.Text = "Balance";
             this.Load += new System.EventHandler(this.Balance_Form_Load);

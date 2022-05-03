@@ -1,7 +1,7 @@
 ﻿
 namespace IT488_Leave_Request_Dashboard
 {
-    partial class new_request_form
+    partial class NewRequestsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@ namespace IT488_Leave_Request_Dashboard
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.createRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
@@ -362,12 +361,9 @@ namespace IT488_Leave_Request_Dashboard
             // 
             this.RequestType_combo.FormattingEnabled = true;
             this.RequestType_combo.Items.AddRange(new object[] {
-            "Leave of Abscence",
             "Paid Time Off",
-            "Maternity ",
-            "Personal",
-            "Sick",
-            "Family"});
+            "Medical Leave",
+            "Leave of Absence"});
             this.RequestType_combo.Location = new System.Drawing.Point(409, 66);
             this.RequestType_combo.Margin = new System.Windows.Forms.Padding(2);
             this.RequestType_combo.Name = "RequestType_combo";

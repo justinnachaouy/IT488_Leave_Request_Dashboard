@@ -33,9 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,52 +51,92 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Balance_Form.cs">
+    <Compile Include="Forms\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Balance_Form.Designer.cs">
+    <Compile Include="Forms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Balance_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Balance_Form.Designer.cs">
       <DependentUpon>Balance_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controller.cs" />
-    <Compile Include="new_request_form.cs">
+    <Compile Include="Forms\EmployeesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="new_request_form.Designer.cs">
-      <DependentUpon>new_request_form.cs</DependentUpon>
+    <Compile Include="Forms\EmployeesForm.Designer.cs">
+      <DependentUpon>EmployeesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="requests_form.cs">
+    <Compile Include="Forms\RequestsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="requests_form.Designer.cs">
-      <DependentUpon>requests_form.cs</DependentUpon>
+    <Compile Include="Forms\RequestsForm.Designer.cs">
+      <DependentUpon>RequestsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="login_form.cs">
+    <Compile Include="Forms\RequestsForm - Copy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="login_form.Designer.cs">
-      <DependentUpon>login_form.cs</DependentUpon>
+    <Compile Include="Forms\RequestsForm - Copy.Designer.cs">
+      <DependentUpon>RequestsForm - Copy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globals.cs" />
+    <Compile Include="SqlController.cs" />
+    <Compile Include="Forms\NewRequestsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewRequestsForm.Designer.cs">
+      <DependentUpon>NewRequestsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Balance_Form.resx">
+    <Compile Include="Styles.cs" />
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Balance_Form.resx">
       <DependentUpon>Balance_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="new_request_form.resx">
-      <DependentUpon>new_request_form.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\NewRequestsForm.resx">
+      <DependentUpon>NewRequestsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="requests_form.resx">
-      <DependentUpon>requests_form.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EmployeesForm.resx">
+      <DependentUpon>EmployeesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="login_form.resx">
-      <DependentUpon>login_form.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\RequestsForm.resx">
+      <DependentUpon>RequestsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RequestsForm - Copy.resx">
+      <DependentUpon>RequestsForm - Copy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
