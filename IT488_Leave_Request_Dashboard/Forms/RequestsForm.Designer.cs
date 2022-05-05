@@ -641,8 +641,8 @@ namespace IT488_Leave_Request_Dashboard
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(874, 638);
             this.ControlBox = false;
-            this.Controls.Add(this.panelRequestDetails);
             this.Controls.Add(this.dataGridDatabaseViewer);
+            this.Controls.Add(this.panelRequestDetails);
             this.Controls.Add(this.menuStrip2);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

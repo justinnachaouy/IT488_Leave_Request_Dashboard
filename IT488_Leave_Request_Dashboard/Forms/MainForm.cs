@@ -187,7 +187,7 @@ namespace IT488_Leave_Request_Dashboard
         {
             ActivateButton(sender);
 
-            AboutForm frm = new AboutForm();
+            BalancesForm frm = new BalancesForm();
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             frm.FormBorderStyle = FormBorderStyle.None;

@@ -47,12 +47,12 @@ namespace IT488_Leave_Request_Dashboard
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.chartRequestsByMonth = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartRequestsByType = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartRequestsByEmployee = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartRequestsByStatus = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartRequestsByMonth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRequestsByType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartRequestsByEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartRequestsByStatus)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +63,7 @@ namespace IT488_Leave_Request_Dashboard
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.chartRequestsByStatus, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.chart2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.chartRequestsByType, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.chartRequestsByMonth, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.chartRequestsByEmployee, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -93,28 +93,28 @@ namespace IT488_Leave_Request_Dashboard
             this.chartRequestsByMonth.TabIndex = 4;
             this.chartRequestsByMonth.Text = "chart1";
             title3.Name = "Title1";
-            title3.Text = "Value";
+            title3.Text = "Requests by Month";
             this.chartRequestsByMonth.Titles.Add(title3);
             // 
-            // chart2
+            // chartRequestsByType
             // 
             chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartRequestsByType.ChartAreas.Add(chartArea2);
+            this.chartRequestsByType.Dock = System.Windows.Forms.DockStyle.Fill;
             legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(484, 322);
-            this.chart2.Name = "chart2";
+            this.chartRequestsByType.Legends.Add(legend2);
+            this.chartRequestsByType.Location = new System.Drawing.Point(484, 322);
+            this.chartRequestsByType.Name = "chartRequestsByType";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Requests";
-            this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(475, 313);
-            this.chart2.TabIndex = 6;
-            this.chart2.Text = "chart1";
+            this.chartRequestsByType.Series.Add(series2);
+            this.chartRequestsByType.Size = new System.Drawing.Size(475, 313);
+            this.chartRequestsByType.TabIndex = 6;
+            this.chartRequestsByType.Text = "chart1";
             title2.Name = "Title1";
-            title2.Text = "Value";
-            this.chart2.Titles.Add(title2);
+            title2.Text = "Requests by Type";
+            this.chartRequestsByType.Titles.Add(title2);
             // 
             // chartRequestsByEmployee
             // 
@@ -126,6 +126,7 @@ namespace IT488_Leave_Request_Dashboard
             this.chartRequestsByEmployee.Location = new System.Drawing.Point(3, 3);
             this.chartRequestsByEmployee.Name = "chartRequestsByEmployee";
             series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series4.Legend = "Legend1";
             series4.Name = "Requests";
             this.chartRequestsByEmployee.Series.Add(series4);
@@ -133,7 +134,7 @@ namespace IT488_Leave_Request_Dashboard
             this.chartRequestsByEmployee.TabIndex = 7;
             this.chartRequestsByEmployee.Text = "chart1";
             title4.Name = "Title1";
-            title4.Text = "Value";
+            title4.Text = "Requests by Employee";
             this.chartRequestsByEmployee.Titles.Add(title4);
             // 
             // chartRequestsByStatus
@@ -146,6 +147,7 @@ namespace IT488_Leave_Request_Dashboard
             this.chartRequestsByStatus.Location = new System.Drawing.Point(3, 322);
             this.chartRequestsByStatus.Name = "chartRequestsByStatus";
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
             series1.Legend = "Legend1";
             series1.Name = "Requests";
             this.chartRequestsByStatus.Series.Add(series1);
@@ -153,7 +155,7 @@ namespace IT488_Leave_Request_Dashboard
             this.chartRequestsByStatus.TabIndex = 8;
             this.chartRequestsByStatus.Text = "chart1";
             title1.Name = "Title1";
-            title1.Text = "Value";
+            title1.Text = "Requests by Status";
             this.chartRequestsByStatus.Titles.Add(title1);
             // 
             // ReportsForm
@@ -170,7 +172,7 @@ namespace IT488_Leave_Request_Dashboard
             this.Load += new System.EventHandler(this.ReportsForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartRequestsByMonth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRequestsByType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartRequestsByEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartRequestsByStatus)).EndInit();
             this.ResumeLayout(false);
@@ -181,7 +183,7 @@ namespace IT488_Leave_Request_Dashboard
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartRequestsByStatus;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartRequestsByType;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartRequestsByMonth;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartRequestsByEmployee;
     }

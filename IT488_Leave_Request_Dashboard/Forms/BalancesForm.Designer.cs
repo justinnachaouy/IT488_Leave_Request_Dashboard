@@ -112,7 +112,7 @@ namespace IT488_Leave_Request_Dashboard
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EmployeesForm";
-            this.Load += new System.EventHandler(this.RequestsForm_Load);
+            this.Load += new System.EventHandler(this.BalancesForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveWindow_MouseDown);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();

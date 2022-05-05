@@ -46,25 +46,33 @@ namespace IT488_Leave_Request_Dashboard
             // Run command on SQL
             DataTable RequestsByMonthReport;
             RequestsByMonthReport = sqlController.RequestsByMonthReport();
-
-            // Change the datasource on the chart
             chartRequestsByMonth.DataSource = RequestsByMonthReport;
-
             chartRequestsByMonth.Series["Requests"].XValueMember = "Month";
             chartRequestsByMonth.Series["Requests"].YValueMembers = "Requests";
-            chartRequestsByMonth.Titles.Add("Requests by Month");
 
 
             // Run command on SQL
             DataTable RequestsByStatusReport;
             RequestsByStatusReport = sqlController.RequestsByStatusReport();
-
-            // Change the datasource on the chart
             chartRequestsByStatus.DataSource = RequestsByStatusReport;
-
             chartRequestsByStatus.Series["Requests"].XValueMember = "Status";
             chartRequestsByStatus.Series["Requests"].YValueMembers = "Requests";
-            chartRequestsByStatus.Titles.Add("Requests by Status");
+
+
+            // Run command on SQL
+            DataTable RequestsByTypeReport;
+            RequestsByTypeReport = sqlController.RequestsByTypeReport();
+            chartRequestsByType.DataSource = RequestsByTypeReport;
+            chartRequestsByType.Series["Requests"].XValueMember = "Type";
+            chartRequestsByType.Series["Requests"].YValueMembers = "Requests";
+
+
+            // Run command on SQL
+            DataTable RequestsByEmployeeReport;
+            RequestsByEmployeeReport = sqlController.RequestsByEmployeeReport();
+            chartRequestsByEmployee.DataSource = RequestsByEmployeeReport;
+            chartRequestsByEmployee.Series["Requests"].XValueMember = "EmployeeUsername";
+            chartRequestsByEmployee.Series["Requests"].YValueMembers = "Requests";
 
 
 

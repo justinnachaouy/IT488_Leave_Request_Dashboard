@@ -149,7 +149,17 @@ namespace IT488_Leave_Request_Dashboard
 
         private void btnNewRequest_Click(object sender, EventArgs e)
         {
+            txtRequestID.Text = "";
+            comboRequestType.Text = "Paid Time Off";
             txtRequestStatus.Text = "Pending";
+            StartDate_picker.Text = DateTime.Now.ToString();
+            EndDate_picker.Text = DateTime.Now.ToString();
+            comboStartHour.Text = "7:00 AM";
+            comboEndHour.Text = "8:00 AM";
+            labelHours.Text = "1";
+            comboSpecificTime.Text = "Yes";
+            txtManager.Text = "";
+            txtComments.Text = "";
 
             // We are not editing
             Globals.IsEdit = false;

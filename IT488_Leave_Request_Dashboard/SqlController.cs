@@ -129,6 +129,34 @@ namespace IT488_Leave_Request_Dashboard
             return dt;
         }
 
+        public DataTable RequestsByTypeReport()
+        {
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            string sql = string.Format("SELECT Type,COUNT(*) AS 'Requests' FROM [Requests] GROUP BY Type");
+            SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
+
+            // Create DataTable and store our records there
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
+
+        public DataTable RequestsByEmployeeReport()
+        {
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            string sql = string.Format("SELECT EmployeeUsername,COUNT(*) AS 'Requests' FROM [Requests] GROUP BY EmployeeUsername");
+            SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
+
+            // Create DataTable and store our records there
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
+
 
         public DataTable RequestsByMonthsdfasdfReport()
         {
@@ -157,13 +185,52 @@ namespace IT488_Leave_Request_Dashboard
 
             return dt;
         }
-
-
-
-
         #endregion // SQL Commands to Populate Reports
 
 
+
+
+        public bool BalancesByEmployee()
+        {
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            string sql = string.Format("SELECT t1.EmployeeUsername, COALESCE([LOA Hours Used], 0) AS [LOA Hours Used], COALESCE([Medical Hours Used], 0) AS [Medical Hours Used], COALESCE([PTO Hours Used], 0) AS [PTO Hours Used], COALESCE([LOAScheduled], 0) AS [LOAScheduled], COALESCE([MedicalScheduled], 0) AS [MedicalScheduled], COALESCE([PTOScheduled], 0) AS [PTOScheduled], COALESCE([PTOEarned], 0) AS [PTOEarned], COALESCE([MedicalEarned], 0) AS [MedicalEarned], COALESCE([LOAEarned], 0) AS [LOAEarned] FROM (SELECT EmployeeUsername FROM [Requests] where EmployeeUsername = '{0}' GROUP BY EmployeeUsername) t1  LEFT JOIN (SELECT EmployeeUsername, SUM(Hours) AS 'LOA Hours Used' FROM [Requests] where EmployeeUsername = '{0}' AND Type = 'LOA' AND StartDate <= GETDATE() GROUP BY EmployeeUsername) t2 ON t1.EmployeeUsername = t2.EmployeeUsername LEFT JOIN (SELECT EmployeeUsername, SUM(Hours) AS 'Medical Hours Used' FROM [Requests] where EmployeeUsername = '{0}' AND Type = 'Medical' AND StartDate <= GETDATE() GROUP BY EmployeeUsername) t3 ON t1.EmployeeUsername = t3.EmployeeUsername LEFT JOIN (SELECT EmployeeUsername, SUM(Hours) AS 'PTO Hours Used' FROM [Requests] where EmployeeUsername = '{0}' AND Type = 'PaidTimeOff' AND StartDate <= GETDATE() GROUP BY EmployeeUsername) t4 ON t1.EmployeeUsername = t4.EmployeeUsername LEFT JOIN (SELECT EmployeeUsername, SUM(Hours) AS 'LOAScheduled' FROM [Requests] where EmployeeUsername = '{0}' AND Type = 'LOA' AND StartDate > GETDATE() GROUP BY EmployeeUsername) t5 ON t1.EmployeeUsername = t5.EmployeeUsername LEFT JOIN (SELECT EmployeeUsername, SUM(Hours) AS 'MedicalScheduled' FROM [Requests] where EmployeeUsername = '{0}' AND Type = 'Medical' AND StartDate > GETDATE() GROUP BY EmployeeUsername) t6 ON t1.EmployeeUsername = t6.EmployeeUsername LEFT JOIN (SELECT EmployeeUsername, SUM(Hours) AS 'PTOScheduled' FROM [Requests] where EmployeeUsername = '{0}' AND Type = 'PaidTimeOff' AND StartDate > GETDATE() GROUP BY EmployeeUsername) t7 ON t1.EmployeeUsername = t7.EmployeeUsername LEFT JOIN (SELECT EmployeeUsername, SUM([PaidTimeOff]) AS 'PTOEarned' FROM Employees where EmployeeUsername = '{0}' GROUP BY EmployeeUsername) t8 ON t1.EmployeeUsername = t8.EmployeeUsername LEFT JOIN (SELECT EmployeeUsername, SUM([LOA]) AS 'LOAEarned' FROM Employees where EmployeeUsername = '{0}' GROUP BY EmployeeUsername) t9 ON t1.EmployeeUsername = t9.EmployeeUsername LEFT JOIN (SELECT EmployeeUsername, SUM([Medical]) AS 'MedicalEarned' FROM Employees where EmployeeUsername = '{0}' GROUP BY EmployeeUsername) t10 ON t1.EmployeeUsername = t10.EmployeeUsername",Globals.VarUsername);
+            //SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
+            SqlCommand da = new SqlCommand(sql, cnn);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                SqlDataReader reader = da.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    BalanceModel.UsedPTO = Convert.ToInt32(reader[3].ToString());
+                    BalanceModel.UsedMedical = Convert.ToInt32(reader[2].ToString());
+                    BalanceModel.UsedLOA = Convert.ToInt32(reader[1].ToString());
+
+                    BalanceModel.ScheduledPTO = Convert.ToInt32(reader[6].ToString());
+                    BalanceModel.ScheduledMedical = Convert.ToInt32(reader[5].ToString());
+                    BalanceModel.ScheduledLOA = Convert.ToInt32(reader[4].ToString());
+
+                    BalanceModel.EarnedPTO = Convert.ToInt32(reader[7].ToString());
+                    BalanceModel.EarnedMedical = Convert.ToInt32(reader[8].ToString());
+                    BalanceModel.EarnedLOA = Convert.ToInt32(reader[9].ToString());
+
+
+                    
+                    BalanceModel.RemainingPTO = Convert.ToInt32(reader[7].ToString()) - (Convert.ToInt32(reader[6].ToString()) + Convert.ToInt32(reader[2].ToString()));
+                    BalanceModel.RemainingMedical = Convert.ToInt32(reader[8].ToString()) - (Convert.ToInt32(reader[5].ToString()) + Convert.ToInt32(reader[2].ToString()));
+                    BalanceModel.RemainingLOA = Convert.ToInt32(reader[9].ToString()) - (Convert.ToInt32(reader[4].ToString()) + Convert.ToInt32(reader[1].ToString()));
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
 
 
 
