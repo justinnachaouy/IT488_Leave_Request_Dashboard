@@ -65,6 +65,7 @@ namespace IT488_Leave_Request_Dashboard
             this.newRequestToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5);
             this.newRequestToolStripMenuItem.Size = new System.Drawing.Size(47, 32);
             this.newRequestToolStripMenuItem.Text = "New";
+            this.newRequestToolStripMenuItem.Visible = false;
             // 
             // refreshRequestsToolStripMenuItem
             // 
@@ -76,6 +77,7 @@ namespace IT488_Leave_Request_Dashboard
             this.refreshRequestsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5);
             this.refreshRequestsToolStripMenuItem.Size = new System.Drawing.Size(65, 32);
             this.refreshRequestsToolStripMenuItem.Text = "Refresh";
+            this.refreshRequestsToolStripMenuItem.Visible = false;
             this.refreshRequestsToolStripMenuItem.Click += new System.EventHandler(this.refreshRequestsToolStripMenuItem_Click);
             // 
             // filterRequestsToolStripMenuItem
