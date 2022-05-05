@@ -44,9 +44,9 @@ namespace IT488_Leave_Request_Dashboard
             }
 
         }
-        //
-        // SQL Commands to View Requests
-        //
+        
+        #region // SQL Commands to View Requests
+        
 
         // All Employees - Will return all requests that match EmployeeUsername 
         public DataTable GetAllMyRequests()
@@ -96,12 +96,80 @@ namespace IT488_Leave_Request_Dashboard
             return dt;
         }
 
-        //
-        // End of SQL Commands to View Requests
-        //
+        #endregion // End of SQL Commands to View Requests
+
+
+
+        #region // SQL Commands to Populate Reports
+        public DataTable RequestsByMonthReport()
+        {
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            string sql = string.Format("SELECT FORMAT(CONVERT(datetime,EndDate), 'MMMM') AS Month,COUNT(*) AS 'Requests' FROM [Requests] GROUP BY FORMAT(CONVERT(datetime,EndDate), 'MMMM')");
+            SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
+
+            // Create DataTable and store our records there
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
+
+        public DataTable RequestsByStatusReport()
+        {
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            string sql = string.Format("SELECT Status,COUNT(*) AS 'Requests' FROM [Requests] GROUP BY Status");
+            SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
+
+            // Create DataTable and store our records there
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
+
+
+        public DataTable RequestsByMonthsdfasdfReport()
+        {
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            string sql = string.Format("SELECT FORMAT(CONVERT(datetime,EndDate), 'MMMM') AS Month,COUNT(*) AS 'Requests' FROM [Requests] GROUP BY FORMAT(CONVERT(datetime,EndDate), 'MMMM')");
+            SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
+
+            // Create DataTable and store our records there
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
+
+        public DataTable RequestsByMonthssssssReport()
+        {
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            string sql = string.Format("SELECT FORMAT(CONVERT(datetime,EndDate), 'MMMM') AS Month,COUNT(*) AS 'Requests' FROM [Requests] GROUP BY FORMAT(CONVERT(datetime,EndDate), 'MMMM')");
+            SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
+
+            // Create DataTable and store our records there
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
+
+
+
+
+        #endregion // SQL Commands to Populate Reports
+
+
+
+
+
 
         //
-        // SQL Commands to View Requests
+        // SQL Commands to View Employees
         //
 
         // Manager Only - Will return all requests that match ManagerUsername 
