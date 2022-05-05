@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>This program was created to give employers and employees relief from the stress of having to worry about asking for time off and making sure a member of management can approve it. The way the leave request dashboard is set up allows employees to put in request check balances and check the status of leave all in one place. This gives the manager a way of quickly going in and approving or denying the leave request without the hassle of figuring out other details behind it, such as balances and last leaves.</value>
+  </data>
 </root>

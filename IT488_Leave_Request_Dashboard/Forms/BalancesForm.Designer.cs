@@ -30,9 +30,7 @@ namespace IT488_Leave_Request_Dashboard
         private void InitializeComponent()
         {
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.newRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshRequestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.filterRequestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridDatabaseViewer = new System.Windows.Forms.DataGridView();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDatabaseViewer)).BeginInit();
@@ -45,26 +43,13 @@ namespace IT488_Leave_Request_Dashboard
             this.menuStrip2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newRequestToolStripMenuItem,
-            this.refreshRequestsToolStripMenuItem,
-            this.filterRequestsToolStripMenuItem});
+            this.refreshRequestsToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(5);
             this.menuStrip2.Size = new System.Drawing.Size(1070, 42);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
-            // 
-            // newRequestToolStripMenuItem
-            // 
-            this.newRequestToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.newRequestToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.newRequestToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.newRequestToolStripMenuItem.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.newRequestToolStripMenuItem.Name = "newRequestToolStripMenuItem";
-            this.newRequestToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5);
-            this.newRequestToolStripMenuItem.Size = new System.Drawing.Size(47, 32);
-            this.newRequestToolStripMenuItem.Text = "New";
             // 
             // refreshRequestsToolStripMenuItem
             // 
@@ -78,18 +63,6 @@ namespace IT488_Leave_Request_Dashboard
             this.refreshRequestsToolStripMenuItem.Text = "Refresh";
             this.refreshRequestsToolStripMenuItem.Click += new System.EventHandler(this.refreshRequestsToolStripMenuItem_Click);
             // 
-            // filterRequestsToolStripMenuItem
-            // 
-            this.filterRequestsToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.filterRequestsToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.filterRequestsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.filterRequestsToolStripMenuItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.filterRequestsToolStripMenuItem.Name = "filterRequestsToolStripMenuItem";
-            this.filterRequestsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5);
-            this.filterRequestsToolStripMenuItem.Size = new System.Drawing.Size(50, 32);
-            this.filterRequestsToolStripMenuItem.Text = "Filter";
-            this.filterRequestsToolStripMenuItem.Visible = false;
-            // 
             // dataGridDatabaseViewer
             // 
             this.dataGridDatabaseViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -100,7 +73,7 @@ namespace IT488_Leave_Request_Dashboard
             this.dataGridDatabaseViewer.TabIndex = 3;
             this.dataGridDatabaseViewer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // EmployeesForm
+            // BalancesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -111,7 +84,7 @@ namespace IT488_Leave_Request_Dashboard
             this.Controls.Add(this.menuStrip2);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EmployeesForm";
+            this.Name = "BalancesForm";
             this.Load += new System.EventHandler(this.BalancesForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveWindow_MouseDown);
             this.menuStrip2.ResumeLayout(false);
@@ -123,9 +96,7 @@ namespace IT488_Leave_Request_Dashboard
 
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem newRequestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem refreshRequestsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem filterRequestsToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridDatabaseViewer;
     }
 }

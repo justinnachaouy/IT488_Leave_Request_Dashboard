@@ -48,12 +48,12 @@ namespace IT488_Leave_Request_Dashboard
                 // Report the test as successful and close the connection
                 if (validTest)
                 {
-                    MessageBox.Show("Connection to " + Globals.VarServer + " was successful!");
+                    //MessageBox.Show("Connection to " + Globals.VarServer + " was successful!");
                     MessageBox.Show("Login Successful!");
 
                     // Check User
                     Globals.SQLUsername = sqlController.Check_User().ToString();
-                    MessageBox.Show(Globals.SQLUsername.ToString());
+                    //MessageBox.Show(Globals.SQLUsername.ToString());
                     // End of Check User
 
                     // Check Role
@@ -80,7 +80,7 @@ namespace IT488_Leave_Request_Dashboard
                             }
                         }
                     }
-                    MessageBox.Show(Globals.VarRole.ToString());
+                    //MessageBox.Show(Globals.VarRole.ToString());
                     // End of Check Role
 
 

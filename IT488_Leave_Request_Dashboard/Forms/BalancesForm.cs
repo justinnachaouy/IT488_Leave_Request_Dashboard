@@ -41,148 +41,211 @@ namespace IT488_Leave_Request_Dashboard
                 sqlController = new SqlController(Globals.sqlConnectionString);
             }
             // Create DataTable and Select all Records in Requests Table
-            bool BalancesByEmployee;
-            BalancesByEmployee = sqlController.BalancesByEmployee();
+            bool isValid = sqlController.BalancesByEmployee();
 
-            // Create a new DataTable.
-            System.Data.DataTable table = new DataTable("Balances");
-            // Declare variables for DataColumn and DataRow objects.
-            DataColumn column;
-            DataRow row;
+            if (isValid)
+            {
+                // Create a new DataTable.
+                System.Data.DataTable table = new DataTable("Balances");
+                // Declare variables for DataColumn and DataRow objects.
+                DataColumn column;
+                DataRow row;
 
-            // Create new DataColumn, set DataType,
-            // ColumnName and add to DataTable.
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "LeaveType";
-            column.AutoIncrement = false;
-            column.Caption = "Leave Type";
-            column.ReadOnly = false;
-            column.Unique = false;
-            // Add the column to the table.
-            table.Columns.Add(column);
+                // Create new DataColumn, set DataType,
+                // ColumnName and add to DataTable.
+                column = new DataColumn();
+                column.DataType = System.Type.GetType("System.String");
+                column.ColumnName = "LeaveType";
+                column.AutoIncrement = false;
+                column.Caption = "Leave Type";
+                column.ReadOnly = false;
+                column.Unique = false;
+                // Add the column to the table.
+                table.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.Int32");
-            column.ColumnName = "Earned";
-            column.Caption = "Earned";
-            column.ReadOnly = true;
-            column.Unique = false;
-            // Add the column to the table.
-            table.Columns.Add(column);
+                column = new DataColumn();
+                column.DataType = System.Type.GetType("System.Int32");
+                column.ColumnName = "Earned";
+                column.Caption = "Earned";
+                column.ReadOnly = true;
+                column.Unique = false;
+                // Add the column to the table.
+                table.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.Int32");
-            column.ColumnName = "Used";
-            column.Caption = "Used";
-            column.ReadOnly = true;
-            column.Unique = false;
-            // Add the column to the table.
-            table.Columns.Add(column);
+                column = new DataColumn();
+                column.DataType = System.Type.GetType("System.Int32");
+                column.ColumnName = "Used";
+                column.Caption = "Used";
+                column.ReadOnly = true;
+                column.Unique = false;
+                // Add the column to the table.
+                table.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.Int32");
-            column.ColumnName = "Scheduled";
-            column.Caption = "Scheduled";
-            column.ReadOnly = true;
-            column.Unique = false;
-            // Add the column to the table.
-            table.Columns.Add(column);
+                column = new DataColumn();
+                column.DataType = System.Type.GetType("System.Int32");
+                column.ColumnName = "Scheduled";
+                column.Caption = "Scheduled";
+                column.ReadOnly = true;
+                column.Unique = false;
+                // Add the column to the table.
+                table.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.Int32");
-            column.ColumnName = "Remaining";
-            column.Caption = "Remaining";
-            column.ReadOnly = true;
-            column.Unique = false;
-            // Add the column to the table.
-            table.Columns.Add(column);
+                column = new DataColumn();
+                column.DataType = System.Type.GetType("System.Int32");
+                column.ColumnName = "Remaining";
+                column.Caption = "Remaining";
+                column.ReadOnly = true;
+                column.Unique = false;
+                // Add the column to the table.
+                table.Columns.Add(column);
 
-            // Make the ID column the primary key column.
-            //DataColumn[] PrimaryKeyColumns = new DataColumn[1];
-            //PrimaryKeyColumns[0] = table.Columns["id"];
-            //table.PrimaryKey = PrimaryKeyColumns;
+                // Make the ID column the primary key column.
+                //DataColumn[] PrimaryKeyColumns = new DataColumn[1];
+                //PrimaryKeyColumns[0] = table.Columns["id"];
+                //table.PrimaryKey = PrimaryKeyColumns;
 
-            // Instantiate the DataSet variable.
-            DataSet dataSet = new DataSet();
-            // Add the new DataTable to the DataSet.
-            dataSet.Tables.Add(table);
+                // Instantiate the DataSet variable.
+                DataSet dataSet = new DataSet();
+                // Add the new DataTable to the DataSet.
+                dataSet.Tables.Add(table);
 
-            // Create three new DataRow objects and add
-            // them to the DataTable
-            row = table.NewRow();
-            row["LeaveType"] = "Paid Time Off";
-            row["Earned"] = BalanceModel.EarnedPTO;
-            row["Used"] = BalanceModel.UsedPTO;
-            row["Scheduled"] = BalanceModel.ScheduledPTO;
-            row["Remaining"] = BalanceModel.RemainingPTO;
-            table.Rows.Add(row);
+                // Create three new DataRow objects and add
+                // them to the DataTable
+                row = table.NewRow();
+                row["LeaveType"] = "Paid Time Off";
+                row["Earned"] = BalanceModel.EarnedPTO;
+                row["Used"] = BalanceModel.UsedPTO;
+                row["Scheduled"] = BalanceModel.ScheduledPTO;
+                row["Remaining"] = BalanceModel.RemainingPTO;
+                table.Rows.Add(row);
 
-            row = table.NewRow();
-            row["LeaveType"] = "Medical Leave";
-            row["Earned"] = BalanceModel.EarnedMedical;
-            row["Used"] = BalanceModel.UsedMedical;
-            row["Scheduled"] = BalanceModel.ScheduledMedical;
-            row["Remaining"] = BalanceModel.RemainingMedical;
-            table.Rows.Add(row);
+                row = table.NewRow();
+                row["LeaveType"] = "Medical Leave";
+                row["Earned"] = BalanceModel.EarnedMedical;
+                row["Used"] = BalanceModel.UsedMedical;
+                row["Scheduled"] = BalanceModel.ScheduledMedical;
+                row["Remaining"] = BalanceModel.RemainingMedical;
+                table.Rows.Add(row);
 
-            row = table.NewRow();
-            row["LeaveType"] = "Leave of Absence";
-            row["Earned"] = BalanceModel.EarnedLOA;
-            row["Used"] = BalanceModel.UsedLOA;
-            row["Scheduled"] = BalanceModel.ScheduledLOA;
-            row["Remaining"] = BalanceModel.RemainingLOA;
-            table.Rows.Add(row);
-
+                row = table.NewRow();
+                row["LeaveType"] = "Leave of Absence";
+                row["Earned"] = BalanceModel.EarnedLOA;
+                row["Used"] = BalanceModel.UsedLOA;
+                row["Scheduled"] = BalanceModel.ScheduledLOA;
+                row["Remaining"] = BalanceModel.RemainingLOA;
+                table.Rows.Add(row);
+                dataGridDatabaseViewer.DataSource = table;
+            }
 
 
         }
 
         private void refreshRequestsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            if (Globals.ViewingEmployeeRequests)
+            if (Globals.VarUsername.Length == 0 || Globals.VarPassword.Length == 0 ||
+    Globals.VarServer.Length == 0 || Globals.VarDatabase.Length == 0)
             {
-                if (Globals.VarRole == "HR")
-                {
-                    // Create DataTable and Select all Records in Requests Table
-                    DataTable GetAllRequests;
-                    GetAllRequests = sqlController.GetAllRequests();
-
-                    // Change the datasource on our dataGridDatabaseViewer to our DataTable and then display on screen
-                    dataGridDatabaseViewer.DataSource = GetAllRequests;
-                }
-                else
-                {
-                    if (Globals.VarRole == "Manager")
-                    {
-                        // Create DataTable and Select all Records that match ManagerUsername in Requests Table
-                        DataTable AllMyEmployeeRequests;
-                        AllMyEmployeeRequests = sqlController.GetAllMyEmployeeRequests();
-
-                        // Change the datasource on our dataGridDatabaseViewer to our DataTable and then display on screen
-                        dataGridDatabaseViewer.DataSource = AllMyEmployeeRequests;
-                    }
-                    else
-                    {
-                        // Create DataTable and Select all Records that match EmployeeUsername in Requests Table
-                        DataTable GetAllMyRequests;
-                        GetAllMyRequests = sqlController.GetAllMyRequests();
-
-                        // Change the datasource on our dataGridDatabaseViewer to our DataTable and then display on screen
-                        dataGridDatabaseViewer.DataSource = GetAllMyRequests;
-                        Globals.ViewingEmployeeRequests = false;
-                    }
-                }
+                // Code to display if login information is null
             }
-            else 
+            else
             {
-                // Create DataTable and use GetAllRequests command
-                DataTable GetAllMyRequests;
-                GetAllMyRequests = sqlController.GetAllMyRequests();
+                sqlController = new SqlController(Globals.sqlConnectionString);
+            }
+            // Create DataTable and Select all Records in Requests Table
+            bool isValid = sqlController.BalancesByEmployee();
 
-                // Change the datasource on our dataGridDatabaseViewer to our DataTable and then display on screen
-                dataGridDatabaseViewer.DataSource = GetAllMyRequests;
+            if (isValid)
+            {
+                // Create a new DataTable.
+                System.Data.DataTable table = new DataTable("Balances");
+                // Declare variables for DataColumn and DataRow objects.
+                DataColumn column;
+                DataRow row;
+
+                // Create new DataColumn, set DataType,
+                // ColumnName and add to DataTable.
+                column = new DataColumn();
+                column.DataType = System.Type.GetType("System.String");
+                column.ColumnName = "LeaveType";
+                column.AutoIncrement = false;
+                column.Caption = "Leave Type";
+                column.ReadOnly = false;
+                column.Unique = false;
+                // Add the column to the table.
+                table.Columns.Add(column);
+
+                column = new DataColumn();
+                column.DataType = System.Type.GetType("System.Int32");
+                column.ColumnName = "Earned";
+                column.Caption = "Earned";
+                column.ReadOnly = true;
+                column.Unique = false;
+                // Add the column to the table.
+                table.Columns.Add(column);
+
+                column = new DataColumn();
+                column.DataType = System.Type.GetType("System.Int32");
+                column.ColumnName = "Used";
+                column.Caption = "Used";
+                column.ReadOnly = true;
+                column.Unique = false;
+                // Add the column to the table.
+                table.Columns.Add(column);
+
+                column = new DataColumn();
+                column.DataType = System.Type.GetType("System.Int32");
+                column.ColumnName = "Scheduled";
+                column.Caption = "Scheduled";
+                column.ReadOnly = true;
+                column.Unique = false;
+                // Add the column to the table.
+                table.Columns.Add(column);
+
+                column = new DataColumn();
+                column.DataType = System.Type.GetType("System.Int32");
+                column.ColumnName = "Remaining";
+                column.Caption = "Remaining";
+                column.ReadOnly = true;
+                column.Unique = false;
+                // Add the column to the table.
+                table.Columns.Add(column);
+
+                // Make the ID column the primary key column.
+                //DataColumn[] PrimaryKeyColumns = new DataColumn[1];
+                //PrimaryKeyColumns[0] = table.Columns["id"];
+                //table.PrimaryKey = PrimaryKeyColumns;
+
+                // Instantiate the DataSet variable.
+                DataSet dataSet = new DataSet();
+                // Add the new DataTable to the DataSet.
+                dataSet.Tables.Add(table);
+
+                // Create three new DataRow objects and add
+                // them to the DataTable
+                row = table.NewRow();
+                row["LeaveType"] = "Paid Time Off";
+                row["Earned"] = BalanceModel.EarnedPTO;
+                row["Used"] = BalanceModel.UsedPTO;
+                row["Scheduled"] = BalanceModel.ScheduledPTO;
+                row["Remaining"] = BalanceModel.RemainingPTO;
+                table.Rows.Add(row);
+
+                row = table.NewRow();
+                row["LeaveType"] = "Medical Leave";
+                row["Earned"] = BalanceModel.EarnedMedical;
+                row["Used"] = BalanceModel.UsedMedical;
+                row["Scheduled"] = BalanceModel.ScheduledMedical;
+                row["Remaining"] = BalanceModel.RemainingMedical;
+                table.Rows.Add(row);
+
+                row = table.NewRow();
+                row["LeaveType"] = "Leave of Absence";
+                row["Earned"] = BalanceModel.EarnedLOA;
+                row["Used"] = BalanceModel.UsedLOA;
+                row["Scheduled"] = BalanceModel.ScheduledLOA;
+                row["Remaining"] = BalanceModel.RemainingLOA;
+                table.Rows.Add(row);
+                dataGridDatabaseViewer.DataSource = table;
             }
         }
 

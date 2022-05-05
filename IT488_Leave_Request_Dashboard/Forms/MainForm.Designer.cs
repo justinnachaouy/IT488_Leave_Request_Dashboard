@@ -138,6 +138,7 @@ namespace IT488_Leave_Request_Dashboard
             this.btnHolidays.Text = "Holidays";
             this.btnHolidays.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHolidays.UseVisualStyleBackColor = false;
+            this.btnHolidays.Visible = false;
             this.btnHolidays.Click += new System.EventHandler(this.btnHolidays_Click);
             // 
             // btnEmployees
