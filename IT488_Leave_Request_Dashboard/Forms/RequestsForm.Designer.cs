@@ -43,6 +43,7 @@ namespace IT488_Leave_Request_Dashboard
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtComments = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labelError = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.labelHours = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -67,8 +68,6 @@ namespace IT488_Leave_Request_Dashboard
             this.txtRequestStatus = new System.Windows.Forms.TextBox();
             this.txtRequestID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.labelError = new System.Windows.Forms.Label();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDatabaseViewer)).BeginInit();
             this.panelRequestDetails.SuspendLayout();
@@ -96,7 +95,7 @@ namespace IT488_Leave_Request_Dashboard
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(5);
-            this.menuStrip2.Size = new System.Drawing.Size(962, 42);
+            this.menuStrip2.Size = new System.Drawing.Size(874, 42);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -195,7 +194,7 @@ namespace IT488_Leave_Request_Dashboard
             this.dataGridDatabaseViewer.Location = new System.Drawing.Point(0, 42);
             this.dataGridDatabaseViewer.MultiSelect = false;
             this.dataGridDatabaseViewer.Name = "dataGridDatabaseViewer";
-            this.dataGridDatabaseViewer.Size = new System.Drawing.Size(962, 596);
+            this.dataGridDatabaseViewer.Size = new System.Drawing.Size(874, 596);
             this.dataGridDatabaseViewer.TabIndex = 3;
             this.dataGridDatabaseViewer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -205,7 +204,7 @@ namespace IT488_Leave_Request_Dashboard
             this.panelRequestDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRequestDetails.Location = new System.Drawing.Point(0, 42);
             this.panelRequestDetails.Name = "panelRequestDetails";
-            this.panelRequestDetails.Size = new System.Drawing.Size(962, 596);
+            this.panelRequestDetails.Size = new System.Drawing.Size(874, 596);
             this.panelRequestDetails.TabIndex = 4;
             this.panelRequestDetails.Visible = false;
             this.panelRequestDetails.VisibleChanged += new System.EventHandler(this.panelRequestDetails_VisibleChanged);
@@ -222,7 +221,7 @@ namespace IT488_Leave_Request_Dashboard
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(962, 596);
+            this.panel1.Size = new System.Drawing.Size(874, 596);
             this.panel1.TabIndex = 15;
             // 
             // groupBox1
@@ -232,7 +231,7 @@ namespace IT488_Leave_Request_Dashboard
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(10, 442);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(942, 133);
+            this.groupBox1.Size = new System.Drawing.Size(854, 133);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Comments/Notes:";
@@ -244,7 +243,7 @@ namespace IT488_Leave_Request_Dashboard
             this.txtComments.Location = new System.Drawing.Point(3, 16);
             this.txtComments.Multiline = true;
             this.txtComments.Name = "txtComments";
-            this.txtComments.Size = new System.Drawing.Size(936, 114);
+            this.txtComments.Size = new System.Drawing.Size(848, 114);
             this.txtComments.TabIndex = 0;
             // 
             // groupBox2
@@ -266,16 +265,28 @@ namespace IT488_Leave_Request_Dashboard
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(10, 242);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(942, 200);
+            this.groupBox2.Size = new System.Drawing.Size(854, 200);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Request Date/Time";
+            // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelError.ForeColor = System.Drawing.Color.Red;
+            this.labelError.Location = new System.Drawing.Point(39, 91);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(36, 16);
+            this.labelError.TabIndex = 20;
+            this.labelError.Text = "Error!";
+            this.labelError.Visible = false;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(855, 89);
+            this.label9.Location = new System.Drawing.Point(796, 89);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(15, 17);
@@ -286,7 +297,7 @@ namespace IT488_Leave_Request_Dashboard
             // 
             this.labelHours.AutoSize = true;
             this.labelHours.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHours.Location = new System.Drawing.Point(855, 51);
+            this.labelHours.Location = new System.Drawing.Point(796, 51);
             this.labelHours.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelHours.Name = "labelHours";
             this.labelHours.Size = new System.Drawing.Size(15, 17);
@@ -297,7 +308,7 @@ namespace IT488_Leave_Request_Dashboard
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(659, 89);
+            this.label7.Location = new System.Drawing.Point(600, 89);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(182, 16);
@@ -308,7 +319,7 @@ namespace IT488_Leave_Request_Dashboard
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(726, 51);
+            this.label6.Location = new System.Drawing.Point(667, 51);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 16);
@@ -319,7 +330,7 @@ namespace IT488_Leave_Request_Dashboard
             // 
             this.EndTime_label.AutoSize = true;
             this.EndTime_label.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EndTime_label.Location = new System.Drawing.Point(369, 127);
+            this.EndTime_label.Location = new System.Drawing.Point(322, 127);
             this.EndTime_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.EndTime_label.Name = "EndTime_label";
             this.EndTime_label.Size = new System.Drawing.Size(69, 16);
@@ -429,7 +440,7 @@ namespace IT488_Leave_Request_Dashboard
             "03:30 PM",
             "03:45 PM",
             "04:00 PM"});
-            this.comboEndHour.Location = new System.Drawing.Point(372, 150);
+            this.comboEndHour.Location = new System.Drawing.Point(325, 150);
             this.comboEndHour.Name = "comboEndHour";
             this.comboEndHour.Size = new System.Drawing.Size(200, 25);
             this.comboEndHour.TabIndex = 11;
@@ -441,7 +452,7 @@ namespace IT488_Leave_Request_Dashboard
             // 
             this.EndDate_label.AutoSize = true;
             this.EndDate_label.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EndDate_label.Location = new System.Drawing.Point(369, 38);
+            this.EndDate_label.Location = new System.Drawing.Point(322, 38);
             this.EndDate_label.Name = "EndDate_label";
             this.EndDate_label.Size = new System.Drawing.Size(69, 16);
             this.EndDate_label.TabIndex = 8;
@@ -450,7 +461,7 @@ namespace IT488_Leave_Request_Dashboard
             // EndDate_picker
             // 
             this.EndDate_picker.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EndDate_picker.Location = new System.Drawing.Point(372, 61);
+            this.EndDate_picker.Location = new System.Drawing.Point(325, 61);
             this.EndDate_picker.Name = "EndDate_picker";
             this.EndDate_picker.Size = new System.Drawing.Size(200, 23);
             this.EndDate_picker.TabIndex = 7;
@@ -487,7 +498,7 @@ namespace IT488_Leave_Request_Dashboard
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(942, 116);
+            this.groupBox3.Size = new System.Drawing.Size(854, 116);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Request Info";
@@ -511,10 +522,10 @@ namespace IT488_Leave_Request_Dashboard
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(38, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 17);
+            this.label3.Size = new System.Drawing.Size(126, 16);
             this.label3.TabIndex = 8;
             this.label3.Text = "Requesting Hours?";
             // 
@@ -526,7 +537,7 @@ namespace IT488_Leave_Request_Dashboard
             "Paid Time Off",
             "Medical Leave",
             "Leave of Absence"});
-            this.comboRequestType.Location = new System.Drawing.Point(372, 66);
+            this.comboRequestType.Location = new System.Drawing.Point(325, 66);
             this.comboRequestType.Margin = new System.Windows.Forms.Padding(2);
             this.comboRequestType.Name = "comboRequestType";
             this.comboRequestType.Size = new System.Drawing.Size(198, 25);
@@ -535,17 +546,16 @@ namespace IT488_Leave_Request_Dashboard
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(369, 34);
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(322, 34);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 17);
+            this.label5.Size = new System.Drawing.Size(93, 16);
             this.label5.TabIndex = 9;
             this.label5.Text = "Request Type";
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.txtManager);
             this.groupBox4.Controls.Add(this.label1);
@@ -558,7 +568,7 @@ namespace IT488_Leave_Request_Dashboard
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(942, 116);
+            this.groupBox4.Size = new System.Drawing.Size(854, 116);
             this.groupBox4.TabIndex = 15;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Request Details";
@@ -566,39 +576,41 @@ namespace IT488_Leave_Request_Dashboard
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(452, 35);
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(580, 35);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 17);
+            this.label4.Size = new System.Drawing.Size(148, 16);
             this.label4.TabIndex = 15;
             this.label4.Text = "Manager\'s Username:";
             // 
             // txtManager
             // 
             this.txtManager.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtManager.Location = new System.Drawing.Point(455, 66);
+            this.txtManager.Location = new System.Drawing.Point(583, 66);
             this.txtManager.Name = "txtManager";
+            this.txtManager.ReadOnly = true;
             this.txtManager.Size = new System.Drawing.Size(223, 23);
             this.txtManager.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(232, 35);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(295, 35);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 17);
+            this.label1.Size = new System.Drawing.Size(49, 16);
             this.label1.TabIndex = 13;
             this.label1.Text = "Status:";
             // 
             // txtRequestStatus
             // 
             this.txtRequestStatus.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRequestStatus.Location = new System.Drawing.Point(235, 66);
+            this.txtRequestStatus.Location = new System.Drawing.Point(298, 66);
             this.txtRequestStatus.Name = "txtRequestStatus";
-            this.txtRequestStatus.Size = new System.Drawing.Size(154, 23);
+            this.txtRequestStatus.ReadOnly = true;
+            this.txtRequestStatus.Size = new System.Drawing.Size(178, 23);
             this.txtRequestStatus.TabIndex = 12;
             // 
             // txtRequestID
@@ -606,48 +618,28 @@ namespace IT488_Leave_Request_Dashboard
             this.txtRequestID.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRequestID.Location = new System.Drawing.Point(41, 66);
             this.txtRequestID.Name = "txtRequestID";
-            this.txtRequestID.Size = new System.Drawing.Size(136, 23);
+            this.txtRequestID.ReadOnly = true;
+            this.txtRequestID.Size = new System.Drawing.Size(146, 23);
             this.txtRequestID.TabIndex = 11;
+            this.txtRequestID.Text = "0";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(38, 35);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 17);
+            this.label2.Size = new System.Drawing.Size(24, 16);
             this.label2.TabIndex = 9;
             this.label2.Text = "ID:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(836, 35);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 13);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "Start Date:";
-            // 
-            // labelError
-            // 
-            this.labelError.AutoSize = true;
-            this.labelError.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(39, 91);
-            this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(36, 16);
-            this.labelError.TabIndex = 20;
-            this.labelError.Text = "Error!";
-            this.labelError.Visible = false;
             // 
             // RequestsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(962, 638);
+            this.ClientSize = new System.Drawing.Size(874, 638);
             this.ControlBox = false;
             this.Controls.Add(this.panelRequestDetails);
             this.Controls.Add(this.dataGridDatabaseViewer);
@@ -714,6 +706,5 @@ namespace IT488_Leave_Request_Dashboard
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ToolStripMenuItem btnSaveChanges;
         private System.Windows.Forms.Label labelError;
-        private System.Windows.Forms.Label label8;
     }
 }

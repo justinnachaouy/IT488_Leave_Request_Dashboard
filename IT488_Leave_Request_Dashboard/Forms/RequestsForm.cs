@@ -149,6 +149,8 @@ namespace IT488_Leave_Request_Dashboard
 
         private void btnNewRequest_Click(object sender, EventArgs e)
         {
+            txtRequestStatus.Text = "Pending";
+
             // We are not editing
             Globals.IsEdit = false;
 
@@ -355,6 +357,27 @@ namespace IT488_Leave_Request_Dashboard
                 {
                     sqlController.UpdateRequest(Convert.ToInt32(Globals.SelectedRow.Cells[0].Value.ToString()), Globals.SelectedRow.Cells[1].Value.ToString(), ConvertRequestTypeToSave(comboRequestType.Text), txtRequestStatus.Text, startDateFormatted, comboStartHour.Text, endDateFormatted, comboEndHour.Text, Convert.ToInt32(labelHours.Text), comboSpecificTime.Text, txtManager.Text, txtComments.Text);
                     MessageBox.Show("Updating the request was sucessful");
+
+                    // We are not editing anymore
+                    Globals.IsEdit = false;
+                    btnRefreshRequests.PerformClick();
+
+                    // Lets hide the details form and show the requests table again
+                    panelRequestDetails.Visible = false;
+                    dataGridDatabaseViewer.Visible = true;
+
+                    
+
+                    btnCancel.Visible = false;
+                    btnSaveChanges.Visible = false;
+
+                    btnNewRequest.Visible = true;
+                    btnRefreshRequests.Visible = true;
+                    btnFilterRequests.Visible = false;
+                    btnViewEmployeeRequests.Visible = true;
+                    btnEditRequest.Visible = false;
+
+
                 }
                 catch (Exception ex)
                 {
@@ -362,12 +385,7 @@ namespace IT488_Leave_Request_Dashboard
                 }
 
 
-                // We are not editing anymore
-                Globals.IsEdit = false;
 
-                // Lets hide the details form and show the requests table again
-                panelRequestDetails.Visible = false;
-                dataGridDatabaseViewer.Visible = true;
             }
             else
             {
@@ -376,7 +394,17 @@ namespace IT488_Leave_Request_Dashboard
 
                 // Lets hide the details form and show the requests table again
                 panelRequestDetails.Visible = false;
+                btnRefreshRequests.PerformClick();
                 dataGridDatabaseViewer.Visible = true;
+
+                btnCancel.Visible = false;
+                btnSaveChanges.Visible = false;
+
+                btnNewRequest.Visible = true;
+                btnRefreshRequests.Visible = true;
+                btnFilterRequests.Visible = false;
+                btnViewEmployeeRequests.Visible = true;
+                btnEditRequest.Visible = false;
             }
 
 
