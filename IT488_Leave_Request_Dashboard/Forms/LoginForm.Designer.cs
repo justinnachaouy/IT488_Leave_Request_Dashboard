@@ -351,7 +351,7 @@ namespace IT488_Leave_Request_Dashboard
             this.panelShadow.Size = new System.Drawing.Size(875, 8);
             this.panelShadow.TabIndex = 17;
             // 
-            // login_form
+            // LoginForm
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -369,7 +369,7 @@ namespace IT488_Leave_Request_Dashboard
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "login_form";
+            this.Name = "LoginForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TopMost = true;

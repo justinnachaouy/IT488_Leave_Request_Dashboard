@@ -20,7 +20,6 @@ namespace IT488_Leave_Request_Dashboard
         private SqlController sqlController;
         private IconButton currentBtn;
         private Panel leftBorderBtn;
-        //public static bool ViewingEmployeeRequests { get; set; }
 
         public MainForm()
         {

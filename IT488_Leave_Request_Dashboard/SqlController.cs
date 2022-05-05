@@ -36,8 +36,9 @@ namespace IT488_Leave_Request_Dashboard
                     cnn.Open();
                     return true;
                 }
-                catch (SqlException)
+                catch (SqlException ex)
                 {
+                    MessageBox.Show(ex.Message);
                     return false;
                 }
             }
@@ -144,16 +145,49 @@ namespace IT488_Leave_Request_Dashboard
 
 
         // SQL Command to insert a request 
-        public bool CreateRequest(string FirstName, string LastName, string Type, string Status, string StartDate, string EndDate)
+        public bool CreateRequest(string employeeUsername, string type, string status, string startDate, string startHours, string endDate, string endHours, int hours, string requestingSpecificTime, string managerUsername, string comments)
         {
 
             cnn = new SqlConnection(connectionString);
             cnn.Open();
-            string sql = "INSERT INTO Requests (\"First Name\",\"Last Name\",\"Type\",\"Status\",\"ApproverFirstName\",\"ApproverLastName\",\"Start Date\",\"End Date\") VALUES (\'" + FirstName + "\',\'" + LastName + "\',\'" + Type + "\',\'" + Status + "\',\'" + "Joe" + "\',\'" + "Smith" + "\',\'" + StartDate + "\',\'" + EndDate + "\')";
-            SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
+            string sql = string.Format("INSERT \"Requests\"(\"EmployeeUsername\",\"Type\",\"Status\",\"StartDate\",\"StartHours\",\"EndDate\",\"EndHours\",\"Hours\",\"RequestingSpecificTime\",\"ManagerUsername\",\"Comments\") VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}',{7},'{8}','{9}','{10}')", employeeUsername, type, status, startDate, startHours, endDate, endHours, hours, requestingSpecificTime, managerUsername, comments);
+            SqlCommand da = new SqlCommand(sql, cnn);
 
-            return true;
+            try
+            {
+                da.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            
         }
+
+        public bool UpdateRequest(int requestID, string employeeUsername, string type, string status, string startDate, string startHours, string endDate, string endHours, int hours, string requestingSpecificTime, string managerUsername, string comments)
+        {
+
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            string sql = string.Format("Use IT488_Leave_Request_db UPDATE [dbo].[Requests] SET [EmployeeUsername] = '{0}', [Type] = '{1}', [Status] = '{2}', [StartDate] = '{3}', [StartHours] = '{4}', [EndDate] = '{5}', [EndHours] = '{6}', [Hours] = {7}, [RequestingSpecificTime] = '{8}', [ManagerUsername] = '{9}', [Comments] = '{10}' WHERE RequestID = {11}", employeeUsername, type, status, startDate, startHours, endDate, endHours, hours, requestingSpecificTime, managerUsername, comments, requestID);
+            SqlCommand da = new SqlCommand(sql,cnn);
+
+            try
+            {
+                da.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+
+
 
         public String GetRole()
         {

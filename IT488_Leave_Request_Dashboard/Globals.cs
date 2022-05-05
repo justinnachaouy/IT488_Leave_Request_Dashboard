@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace IT488_Leave_Request_Dashboard
 {
@@ -24,6 +25,11 @@ namespace IT488_Leave_Request_Dashboard
         public static string Start_Time_Variable { get; set; }
         public static string End_Time_Variable { get; set; }
         public static string Note_Variable { get; set; }
+        public static DataGridViewRow SelectedRow { get; set; }
+
+        public static bool IsEdit { get; set; }
+        public static bool IsRequestValid { get; set; }
+
 
         public static bool ViewingEmployeeRequests { get; set; }
         public static string sqlConnectionString { get; set; }

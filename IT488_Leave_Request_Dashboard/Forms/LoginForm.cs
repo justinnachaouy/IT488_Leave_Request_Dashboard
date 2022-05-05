@@ -29,7 +29,7 @@ namespace IT488_Leave_Request_Dashboard
             Globals.sqlConnectionString = "Data Source =" + Globals.VarServer + ";" + "Network Library = DBMSSOCN;" + "Initial Catalog =" + Globals.VarDatabase + ";" + "User ID =" + Globals.VarUsername + ";" + "Password =" + Globals.VarPassword + ";";
             try
             {
-                // Open a connection to the Local SQL Server and choose the Northwind Database
+                // Open a connection to the Local SQL Server and choose the Database
                 bool isValid = true;
                 bool validTest = false;
 

@@ -31,6 +31,7 @@ namespace IT488_Leave_Request_Dashboard
 
         private void RequestsForm_Load(object sender, EventArgs e)
         {
+
             if (Globals.VarUsername.Length == 0 || Globals.VarPassword.Length == 0 ||
                 Globals.VarServer.Length == 0 || Globals.VarDatabase.Length == 0)
             {
@@ -100,8 +101,8 @@ namespace IT488_Leave_Request_Dashboard
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var cell = dataGridDatabaseViewer.CurrentRow;
-            Console.WriteLine(cell.ToString());
+            Globals.SelectedRow = dataGridDatabaseViewer.CurrentRow;
+            btnEditRequest.Visible = true;
         }
 
         #region btnMax_Click() // Maximizes the window when clicked
@@ -146,6 +147,113 @@ namespace IT488_Leave_Request_Dashboard
         }
         #endregion // Removes the border when window is maximized
 
+        private void btnNewRequest_Click(object sender, EventArgs e)
+        {
+            // We are not editing
+            Globals.IsEdit = false;
+
+            // Lets hide the requests table and show the details form
+            panelRequestDetails.Visible = true;
+            dataGridDatabaseViewer.Visible = false;
+
+            btnCancel.Visible = true;
+            btnSaveChanges.Visible = true;
+
+            btnNewRequest.Visible = false;
+            btnRefreshRequests.Visible = false;
+            btnFilterRequests.Visible = false;
+            btnViewEmployeeRequests.Visible = false;
+            btnEditRequest.Visible = false;
+        }
+
+        private void btnEditRequest_Click(object sender, EventArgs e)
+        {
+            Globals.IsEdit = true;
+
+            panelRequestDetails.Visible = true;
+            dataGridDatabaseViewer.Visible = false;
+
+            btnCancel.Visible = true;
+            btnSaveChanges.Visible = true;
+
+            btnNewRequest.Visible = false;
+            btnRefreshRequests.Visible = false;
+            btnFilterRequests.Visible = false;
+            btnViewEmployeeRequests.Visible = false;
+            btnEditRequest.Visible = false;
+
+
+            txtRequestID.Text = Globals.SelectedRow.Cells[0].Value.ToString();
+            //txt"Employee Username" Globals.SelectedRow.Cells[1].Value.ToString();
+            comboRequestType.Text = ConvertRequestTypeToEdit(Globals.SelectedRow.Cells[2].Value.ToString());
+            txtRequestStatus.Text = Globals.SelectedRow.Cells[3].Value.ToString();
+            StartDate_picker.Text = Globals.SelectedRow.Cells[4].Value.ToString();
+            EndDate_picker.Text = Globals.SelectedRow.Cells[5].Value.ToString();
+            comboStartHour.Text = Globals.SelectedRow.Cells[6].Value.ToString();
+            comboEndHour.Text = Globals.SelectedRow.Cells[7].Value.ToString();
+            labelHours.Text = Globals.SelectedRow.Cells[8].Value.ToString();
+            comboSpecificTime.Text = Globals.SelectedRow.Cells[9].Value.ToString();
+            txtManager.Text = Globals.SelectedRow.Cells[10].Value.ToString();
+            txtComments.Text = Globals.SelectedRow.Cells[11].Value.ToString();
+        }
+
+
+        private string ConvertRequestTypeToEdit(string type)
+        {
+            if (type == "PaidTimeOff")
+            {
+                return "Paid Time Off";
+            }
+            else
+            {
+                if (type == "LOA")
+                {
+                    return "Leave of Absence";
+                }
+                else
+                {
+                    if (type == "Medical")
+                    {
+                        return "Medical Leave";
+                    }
+                    else 
+                    {
+                        return "Error!";
+                    }
+                }
+            }
+        }
+
+        private string ConvertRequestTypeToSave(string type)
+        {
+            if (type == "Paid Time Off")
+            {
+                return "PaidTimeOff";
+            }
+            else
+            {
+                if (type == "Leave of Absence")
+                {
+                    return "LOA";
+                }
+                else
+                {
+                    if (type == "Medical Leave")
+                    {
+                        return "Medical";
+                    }
+                    else
+                    {
+                        return "Error!";
+                    }
+                }
+            }
+        }
+
+
+
+
+
         private void btnViewEmployeeRequests_Click(object sender, EventArgs e)
         {
             Globals.ViewingEmployeeRequests = true;
@@ -181,6 +289,192 @@ namespace IT488_Leave_Request_Dashboard
                 }
             }
         }
+
+        private void panelRequestDetails_VisibleChanged(object sender, EventArgs e)
+        {
+            
+            if (!panelRequestDetails.Visible)
+            {
+                txtRequestID.Text = "";
+                comboRequestType.Text = "Paid Time Off";
+                txtRequestStatus.Text = "Pending";
+                StartDate_picker.Text = DateTime.Now.ToString();
+                EndDate_picker.Text = DateTime.Now.ToString();
+                comboStartHour.Text = "7:00 AM";
+                comboEndHour.Text = "8:00 AM";
+                labelHours.Text = "1";
+                comboSpecificTime.Text = "Yes";
+                txtManager.Text = "";
+                txtComments.Text = "";
+            }
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            // We are not editing anymore
+            Globals.IsEdit = false;
+
+            // Lets hide the details form and show the requests table again
+            panelRequestDetails.Visible = false;
+            dataGridDatabaseViewer.Visible = true;
+
+            // Since we canceled lets reset the values
+            txtRequestID.Text = "";
+            comboRequestType.Text = "Paid Time Off";
+            txtRequestStatus.Text = "Pending";
+            StartDate_picker.Text = DateTime.Now.ToString();
+            EndDate_picker.Text = DateTime.Now.ToString();
+            comboStartHour.Text = "7:00 AM";
+            comboEndHour.Text = "8:00 AM";
+            labelHours.Text = "1";
+            comboSpecificTime.Text = "Yes";
+            txtManager.Text = "";
+            txtComments.Text = "";
+
+            btnCancel.Visible = false;
+            btnSaveChanges.Visible = false;
+
+            btnNewRequest.Visible = true;
+            btnRefreshRequests.Visible = true;
+            btnFilterRequests.Visible = false;
+            btnViewEmployeeRequests.Visible = true;
+            btnEditRequest.Visible = false;
+
+
+        }
+
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            string startDateFormatted = StartDate_picker.Value.Month.ToString() + "/" + StartDate_picker.Value.Day.ToString() + "/" + StartDate_picker.Value.Year.ToString();
+            string endDateFormatted = EndDate_picker.Value.Month.ToString() + "/" + EndDate_picker.Value.Day.ToString() + "/" + EndDate_picker.Value.Year.ToString();
+
+            if (Globals.IsEdit)
+            {
+                try
+                {
+                    sqlController.UpdateRequest(Convert.ToInt32(Globals.SelectedRow.Cells[0].Value.ToString()), Globals.SelectedRow.Cells[1].Value.ToString(), ConvertRequestTypeToSave(comboRequestType.Text), txtRequestStatus.Text, startDateFormatted, comboStartHour.Text, endDateFormatted, comboEndHour.Text, Convert.ToInt32(labelHours.Text), comboSpecificTime.Text, txtManager.Text, txtComments.Text);
+                    MessageBox.Show("Updating the request was sucessful");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+
+                // We are not editing anymore
+                Globals.IsEdit = false;
+
+                // Lets hide the details form and show the requests table again
+                panelRequestDetails.Visible = false;
+                dataGridDatabaseViewer.Visible = true;
+            }
+            else
+            {
+                sqlController.CreateRequest(Globals.VarUsername.ToString(), ConvertRequestTypeToSave(comboRequestType.Text), txtRequestStatus.Text, startDateFormatted, comboStartHour.Text, endDateFormatted, comboEndHour.Text, Convert.ToInt32(labelHours.Text), comboSpecificTime.Text, txtManager.Text, txtComments.Text);
+                MessageBox.Show("Updating the request was sucessful");
+
+                // Lets hide the details form and show the requests table again
+                panelRequestDetails.Visible = false;
+                dataGridDatabaseViewer.Visible = true;
+            }
+
+
+
+        }
+
+        private void comboSpecificTime_TextUpdate(object sender, EventArgs e)
+        {
+            if (comboSpecificTime.Text == "No")
+            {
+                EndDate_picker.Visible = true;
+                EndDate_label.Visible = true;
+                StartTime_label.Visible = false;
+                EndTime_label.Visible = false;
+                comboStartHour.Visible = false;
+                comboEndHour.Visible = false;
+            }
+            else if (comboSpecificTime.Text == "Yes")
+            {
+                EndDate_picker.Visible = false;
+                EndDate_label.Visible = false;
+                StartTime_label.Visible = true;
+                EndTime_label.Visible = true;
+                comboStartHour.Visible = true;
+                comboEndHour.Visible = true;
+            }
+
+        }
+
+        private void CalculateHoursUsed(object sender, EventArgs e)
+        {
+            if (StartDate_picker.Value > EndDate_picker.Value)
+            {
+                //EndDate_picker.Value = StartDate_picker.Value;
+                labelError.Visible = true;
+                labelError.Text = "Please select an end date that is on or after the start date of this request.";
+                Globals.IsRequestValid = false;
+            }
+
+            if (StartDate_picker.Value < DateTime.Today || EndDate_picker.Value < DateTime.Today)
+            {
+                //StartDate_picker.Value = DateTime.Now;
+                //EndDate_picker.Value = DateTime.Now;
+                labelError.Visible = true;
+                labelError.Text = "You cannot select a date that has already past. Please select another date.";
+                Globals.IsRequestValid = false;
+                //MessageBox.Show("You cannot select a date that has already past. Please select another date.");
+            }
+            if (StartDate_picker.Value < EndDate_picker.Value || StartDate_picker.Value >= DateTime.Today || EndDate_picker.Value >= DateTime.Today)
+            {
+                labelError.Visible = false;
+                Globals.IsRequestValid = true;
+            }
+
+
+            if (comboSpecificTime.Text == "Yes")
+            {
+                string startTimeString = comboStartHour.Text;
+                string endTimeString = comboEndHour.Text;
+                DateTime startTime;
+                DateTime endTime;
+
+                DateTime.TryParse(startTimeString, out startTime);
+                DateTime.TryParse(endTimeString, out endTime);
+
+                DateTime StartDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, startTime.Hour, startTime.Minute, 00);
+                DateTime EndDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, endTime.Hour, endTime.Minute, 00);
+                TimeSpan ts = EndDate - StartDate;
+                labelHours.Text = ts.TotalHours.ToString();
+                //MessageBox.Show("No. of Hours (Difference) = " + ts.TotalHours.ToString());
+            }
+            else if (comboSpecificTime.Text == "No")
+            {
+                DateTime StartDate = new DateTime(StartDate_picker.Value.Year, StartDate_picker.Value.Month, StartDate_picker.Value.Day, 00, 00, 00);
+                DateTime EndDate = new DateTime(EndDate_picker.Value.Year, EndDate_picker.Value.Month, EndDate_picker.Value.Day, 00, 00, 00);
+                double businessDays = GetBusinessDays(StartDate, EndDate);
+                //TimeSpan ts = EndDate - StartDate;
+                //labelHours.Text = ((ts.TotalDays + 1) * 8).ToString();
+                labelHours.Text = (businessDays * 8).ToString();
+
+            }
+
+        }
+
+        public static double GetBusinessDays(DateTime startD, DateTime endD)
+        {
+            double calcBusinessDays =
+                1 + ((endD - startD).TotalDays * 5 -
+                (startD.DayOfWeek - endD.DayOfWeek) * 2) / 7;
+
+            if (endD.DayOfWeek == DayOfWeek.Saturday) calcBusinessDays--;
+            if (startD.DayOfWeek == DayOfWeek.Sunday) calcBusinessDays--;
+
+            return calcBusinessDays;
+        }
+
+
+
 
     }
 }

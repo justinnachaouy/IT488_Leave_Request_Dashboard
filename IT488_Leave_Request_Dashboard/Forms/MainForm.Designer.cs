@@ -67,7 +67,7 @@ namespace IT488_Leave_Request_Dashboard
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 621);
+            this.panelMenu.Size = new System.Drawing.Size(220, 681);
             this.panelMenu.TabIndex = 6;
             this.panelMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveWindow_MouseDown);
             // 
@@ -243,7 +243,7 @@ namespace IT488_Leave_Request_Dashboard
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(220, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(850, 31);
+            this.panelTitleBar.Size = new System.Drawing.Size(913, 31);
             this.panelTitleBar.TabIndex = 7;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveWindow_MouseDown);
             // 
@@ -253,7 +253,7 @@ namespace IT488_Leave_Request_Dashboard
             this.panelWindowButtons.Controls.Add(this.btnMin);
             this.panelWindowButtons.Controls.Add(this.btnMax);
             this.panelWindowButtons.Controls.Add(this.btnClose);
-            this.panelWindowButtons.Location = new System.Drawing.Point(748, 0);
+            this.panelWindowButtons.Location = new System.Drawing.Point(811, 0);
             this.panelWindowButtons.Name = "panelWindowButtons";
             this.panelWindowButtons.Padding = new System.Windows.Forms.Padding(5);
             this.panelWindowButtons.Size = new System.Drawing.Size(102, 30);
@@ -345,7 +345,7 @@ namespace IT488_Leave_Request_Dashboard
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(220, 31);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(850, 8);
+            this.panelShadow.Size = new System.Drawing.Size(913, 8);
             this.panelShadow.TabIndex = 9;
             // 
             // MainForm
@@ -353,7 +353,7 @@ namespace IT488_Leave_Request_Dashboard
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1070, 621);
+            this.ClientSize = new System.Drawing.Size(1133, 681);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);

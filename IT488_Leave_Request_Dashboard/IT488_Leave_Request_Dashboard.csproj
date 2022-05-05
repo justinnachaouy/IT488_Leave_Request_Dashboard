@@ -60,11 +60,11 @@
     <Compile Include="Forms\AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Balance_Form.cs">
+    <Compile Include="Forms\BalancesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Balance_Form.Designer.cs">
-      <DependentUpon>Balance_Form.cs</DependentUpon>
+    <Compile Include="Forms\BalancesForm.Designer.cs">
+      <DependentUpon>BalancesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EmployeesForm.cs">
       <SubType>Form</SubType>
@@ -78,20 +78,14 @@
     <Compile Include="Forms\RequestsForm.Designer.cs">
       <DependentUpon>RequestsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RequestsForm - Copy.cs">
+    <Compile Include="Forms\RequestsFormBACKUP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RequestsForm - Copy.Designer.cs">
-      <DependentUpon>RequestsForm - Copy.cs</DependentUpon>
+    <Compile Include="Forms\RequestsFormBACKUP.Designer.cs">
+      <DependentUpon>RequestsFormBACKUP.cs</DependentUpon>
     </Compile>
     <Compile Include="Globals.cs" />
     <Compile Include="SqlController.cs" />
-    <Compile Include="Forms\NewRequestsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\NewRequestsForm.Designer.cs">
-      <DependentUpon>NewRequestsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,11 +104,8 @@
     <EmbeddedResource Include="Forms\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Balance_Form.resx">
-      <DependentUpon>Balance_Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewRequestsForm.resx">
-      <DependentUpon>NewRequestsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\BalancesForm.resx">
+      <DependentUpon>BalancesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeesForm.resx">
       <DependentUpon>EmployeesForm.cs</DependentUpon>
@@ -122,8 +113,8 @@
     <EmbeddedResource Include="Forms\RequestsForm.resx">
       <DependentUpon>RequestsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RequestsForm - Copy.resx">
-      <DependentUpon>RequestsForm - Copy.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\RequestsFormBACKUP.resx">
+      <DependentUpon>RequestsFormBACKUP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
