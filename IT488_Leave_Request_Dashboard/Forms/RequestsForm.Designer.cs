@@ -194,6 +194,7 @@ namespace IT488_Leave_Request_Dashboard
             this.dataGridDatabaseViewer.Location = new System.Drawing.Point(0, 42);
             this.dataGridDatabaseViewer.MultiSelect = false;
             this.dataGridDatabaseViewer.Name = "dataGridDatabaseViewer";
+            this.dataGridDatabaseViewer.ReadOnly = true;
             this.dataGridDatabaseViewer.Size = new System.Drawing.Size(874, 596);
             this.dataGridDatabaseViewer.TabIndex = 3;
             this.dataGridDatabaseViewer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
