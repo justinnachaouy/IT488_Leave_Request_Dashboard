@@ -436,45 +436,6 @@ namespace IT488_Leave_Request_Dashboard
             }
         }
 
-
-
-
-        // Code to be Deleted
-        public DataTable GetEmployees()
-        {
-
-            cnn = new SqlConnection(connectionString);
-            cnn.Open();
-            string sql = "select * from Employees;";
-            SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
-
-            // Create DataTable and store our records there
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            return dt;
-        }
-
-        public string GetOrderCount()
-        {
-            Int32 count = 0;
-            cnn = new SqlConnection(connectionString);
-            cnn.Open();
-            string countQuery = "select count(*) from Orders;";
-            SqlCommand cmd = new SqlCommand(countQuery, cnn);
-            try
-            {
-                count = Convert.ToInt32(cmd.ExecuteScalar());
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            return count.ToString();
-        }
-
-        // End of Code to be Deleted
-
     }
 }
 

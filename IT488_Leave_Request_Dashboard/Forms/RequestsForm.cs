@@ -103,6 +103,25 @@ namespace IT488_Leave_Request_Dashboard
         {
             Globals.SelectedRow = dataGridDatabaseViewer.CurrentRow;
             btnEditRequest.Visible = true;
+
+            if (Globals.SelectedRow.Cells[3].Value.ToString() == "Pending" && Globals.VarRole == "HR")
+            {
+                btnApprove.Visible = true;
+                btnDeny.Visible = true;
+            }
+            else
+            {
+                if (Globals.SelectedRow.Cells[3].Value.ToString() == "Pending" && Globals.VarRole == "Manager")
+                {
+                    btnApprove.Visible = true;
+                    btnDeny.Visible = true;
+                }
+                else
+                {
+                    btnApprove.Visible = false;
+                    btnDeny.Visible = false;
+                }                
+            }
         }
 
         #region btnMax_Click() // Maximizes the window when clicked
@@ -511,8 +530,51 @@ namespace IT488_Leave_Request_Dashboard
             return calcBusinessDays;
         }
 
+        private void btnApprove_Click(object sender, EventArgs e)
+        {
+            sqlController.UpdateRequest(Convert.ToInt32(Globals.SelectedRow.Cells[0].Value.ToString()), Globals.SelectedRow.Cells[1].Value.ToString(), Globals.SelectedRow.Cells[2].Value.ToString(), "Approved", Globals.SelectedRow.Cells[4].Value.ToString(), Globals.SelectedRow.Cells[6].Value.ToString(), Globals.SelectedRow.Cells[5].Value.ToString(), Globals.SelectedRow.Cells[7].Value.ToString(), Convert.ToInt32(Globals.SelectedRow.Cells[8].Value.ToString()), Globals.SelectedRow.Cells[9].Value.ToString(), Globals.SelectedRow.Cells[10].Value.ToString(), Globals.SelectedRow.Cells[11].Value.ToString());
+            MessageBox.Show("The request has been approved sucessfully");
 
+            // We are not editing anymore
+            Globals.IsEdit = false;
+            btnRefreshRequests.PerformClick();
 
+            // Lets hide the details form and show the requests table again
+            panelRequestDetails.Visible = false;
+            dataGridDatabaseViewer.Visible = true;
 
+            btnCancel.Visible = false;
+            btnSaveChanges.Visible = false;
+            btnNewRequest.Visible = true;
+            btnRefreshRequests.Visible = true;
+            btnFilterRequests.Visible = false;
+            btnEditRequest.Visible = false;
+            btnApprove.Visible = false;
+            btnDeny.Visible = false;
+
+        }
+
+        private void btnDeny_Click(object sender, EventArgs e)
+        {
+            sqlController.UpdateRequest(Convert.ToInt32(Globals.SelectedRow.Cells[0].Value.ToString()), Globals.SelectedRow.Cells[1].Value.ToString(), Globals.SelectedRow.Cells[2].Value.ToString(), "Denied", Globals.SelectedRow.Cells[4].Value.ToString(), Globals.SelectedRow.Cells[6].Value.ToString(), Globals.SelectedRow.Cells[5].Value.ToString(), Globals.SelectedRow.Cells[7].Value.ToString(), Convert.ToInt32(Globals.SelectedRow.Cells[8].Value.ToString()), Globals.SelectedRow.Cells[9].Value.ToString(), Globals.SelectedRow.Cells[10].Value.ToString(), Globals.SelectedRow.Cells[11].Value.ToString());
+            MessageBox.Show("The request has been denied sucessfully");
+
+            // We are not editing anymore
+            Globals.IsEdit = false;
+            btnRefreshRequests.PerformClick();
+
+            // Lets hide the details form and show the requests table again
+            panelRequestDetails.Visible = false;
+            dataGridDatabaseViewer.Visible = true;
+
+            btnCancel.Visible = false;
+            btnSaveChanges.Visible = false;
+            btnNewRequest.Visible = true;
+            btnRefreshRequests.Visible = true;
+            btnFilterRequests.Visible = false;
+            btnEditRequest.Visible = false;
+            btnApprove.Visible = false;
+            btnDeny.Visible = false;
+        }
     }
 }

@@ -68,6 +68,8 @@ namespace IT488_Leave_Request_Dashboard
             this.txtRequestStatus = new System.Windows.Forms.TextBox();
             this.txtRequestID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnDeny = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnApprove = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDatabaseViewer)).BeginInit();
             this.panelRequestDetails.SuspendLayout();
@@ -85,6 +87,8 @@ namespace IT488_Leave_Request_Dashboard
             this.menuStrip2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnApprove,
+            this.btnDeny,
             this.btnNewRequest,
             this.btnRefreshRequests,
             this.btnFilterRequests,
@@ -635,6 +639,33 @@ namespace IT488_Leave_Request_Dashboard
             this.label2.TabIndex = 9;
             this.label2.Text = "ID:";
             // 
+            // btnDeny
+            // 
+            this.btnDeny.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnDeny.BackColor = System.Drawing.Color.DarkRed;
+            this.btnDeny.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDeny.ForeColor = System.Drawing.Color.White;
+            this.btnDeny.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.btnDeny.Name = "btnDeny";
+            this.btnDeny.Padding = new System.Windows.Forms.Padding(5);
+            this.btnDeny.Size = new System.Drawing.Size(99, 32);
+            this.btnDeny.Text = "Deny Request";
+            this.btnDeny.Visible = false;
+            this.btnDeny.Click += new System.EventHandler(this.btnDeny_Click);
+            // 
+            // btnApprove
+            // 
+            this.btnApprove.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnApprove.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnApprove.ForeColor = System.Drawing.Color.White;
+            this.btnApprove.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.btnApprove.Name = "btnApprove";
+            this.btnApprove.Padding = new System.Windows.Forms.Padding(5);
+            this.btnApprove.Size = new System.Drawing.Size(118, 32);
+            this.btnApprove.Text = "Approve Request";
+            this.btnApprove.Visible = false;
+            this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
+            // 
             // RequestsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -707,5 +738,7 @@ namespace IT488_Leave_Request_Dashboard
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ToolStripMenuItem btnSaveChanges;
         private System.Windows.Forms.Label labelError;
+        private System.Windows.Forms.ToolStripMenuItem btnApprove;
+        private System.Windows.Forms.ToolStripMenuItem btnDeny;
     }
 }
